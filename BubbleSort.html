@@ -1,0 +1,773 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubble Sort &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'BubbleSort';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Bubblesort dan SelectionSort" href="BubbleSort_And_SelectionSort.html" />
+    <link rel="prev" title="PERCOBAAN ARCHIVE 1 : BARU" href="tugas1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/fotoku.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/fotoku.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tugas1.html">PERCOBAAN ARCHIVE 1 : BARU</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Bubble Sort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BubbleSort_And_SelectionSort.html">Bubblesort dan SelectionSort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_002_UTS_SD.html">UTS STRUKTUR DATA 2C - 2023</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="TUGAS2.html">TUGAS 2 PBA : TEXT PREPROCESSING NLP PYTHON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PBA-TUGAS3.html">TUGAS UTS PBA : UTS PROJECT SEDERHANA NLP PYTHON</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FBubbleSort.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/BubbleSort.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Bubble Sort</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="bubble-sort">
+<h1>Bubble Sort<a class="headerlink" href="#bubble-sort" title="Permalink to this heading">#</a></h1>
+<p><strong>1. Pengurutan/Sorting</strong></p>
+<p><strong>Bubble Sort</strong>
+Data tidak hanya sekedar diinput, tetapi data juga butuh diolah sehingga dapat diambil suatu
+analisa. Proses pengurutan merupakan salah satu proses yang sangat penting dalam pengolahan
+data. Misalkan terdapat data mahasiswa, terkadang dibutuhkan data yang urut berdasarkan nilai,
+penghasilan orang tua, sehingga dari data yang urut tersebut dapat diambil keputusan mengenai
+mahasiswa yang berhak menerima beasiswa.
+Secara umum, proses pengurutan data ini dilakukan dengan membandingkan antara data
+yang satu dengan data yang lain.
+Algoritma sorting yang pertama, adalah Bubble Sort, yang terdiri dari: 1. Section 2 2. Section</p>
+<p><strong>Bubble Sort</strong></p>
+<p>Algoritma pengurutan yang pertama adalah Bubble Sort. Algoritma ini dikenal sebagai algoritma
+pengurutan yang membutuhkan waktu paling lama, hanya saja algoritma ini adalah algoritma
+pengurutan yang paling sederhana.
+Bubble sort mengurutkan data dengan cara sebagai berikut : 1. data dibaca mulai dari paling
+kiri atau mulai dari indeks ke 0 (phyton) dari suatu list data 2. Bandingkan antara dua buah data
+yang saling berdekatan (antara data ke i dan i+1), tukar posisi jika data ke-i lebih besar dibandingkan data ke-i+1 (pengurutan secara ascending) 3. pindah satu posisi 4. lakukan perbandingan
+seperti langkah ke-2 dan pindah satu posisi kembali seperti langkah ke-3. Lakukan terus menerus
+sampai indeks data terakhir. 5. Setelah langkah ke-4 dilakukan, maka data yang berada di posisi
+paling kanan (indeks ke-N) adalah data terbesar . 6. Ulangi lagi langkah 1-4 dimulai dari indeks
+data ke 0 sampai dengan indeks ke N-1, N-2, …, 0
+Setiap iterasi berakhir, data yang terletak di posisi paling kanan adalah data yang paling besar,
+oleh karena itu algoritma ini disebut dengan ’bubble’ karena data terbesar disetiap iterasi berakhir
+bergerak keatas seperti halnya gelembung. Berikut ilustrasi algoritma bubble sort pada tiap iterasi. Misalkan terdapat data [7, 2.5, 5. 10, 1]. Iterasi Kertama, bertujuan untuk memindahkan
+data terbesar, yaitu 10, ke posisi terakhir atau paling kanan dari list (karena proses pengurutan
+secara ascending (dari kecil-ke besar). Proses iterasi pertama ini dapat dilihat pada Gambar 1</p>
+<p><strong>2.1 code</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bubbleSort</span><span class="p">(</span><span class="n">listData</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data yang akan diurutkan : &#39;</span><span class="p">,</span> <span class="n">listData</span><span class="p">)</span>
+    <span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">for</span> <span class="n">outIter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">listData</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span>
+        <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Iterasi ke-&#39;</span><span class="p">,</span> <span class="n">count</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">outIter</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">listData</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="n">listData</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">temp</span><span class="o">=</span><span class="n">listData</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+                <span class="n">listData</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">=</span><span class="n">listData</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+                <span class="n">listData</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">temp</span>
+                <span class="c1">#listData[i],listData[i+1]=listData[i+1],listData[i]</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">listData</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data urut-&#39;</span><span class="p">,</span><span class="n">listData</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">bubbleSort</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">b</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">bubbleSort</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data yang akan diurutkan :  [12, 0, 5, 1, 11, 20, 4, 2]
+Iterasi ke- 1 :
+[0, 12, 5, 1, 11, 20, 4, 2]
+[0, 5, 12, 1, 11, 20, 4, 2]
+[0, 5, 1, 12, 11, 20, 4, 2]
+[0, 5, 1, 11, 12, 20, 4, 2]
+[0, 5, 1, 11, 12, 20, 4, 2]
+[0, 5, 1, 11, 12, 4, 20, 2]
+[0, 5, 1, 11, 12, 4, 2, 20]
+Iterasi ke- 2 :
+[0, 5, 1, 11, 12, 4, 2, 20]
+[0, 1, 5, 11, 12, 4, 2, 20]
+[0, 1, 5, 11, 12, 4, 2, 20]
+[0, 1, 5, 11, 12, 4, 2, 20]
+[0, 1, 5, 11, 4, 12, 2, 20]
+[0, 1, 5, 11, 4, 2, 12, 20]
+Iterasi ke- 3 :
+[0, 1, 5, 11, 4, 2, 12, 20]
+[0, 1, 5, 11, 4, 2, 12, 20]
+[0, 1, 5, 11, 4, 2, 12, 20]
+[0, 1, 5, 4, 11, 2, 12, 20]
+[0, 1, 5, 4, 2, 11, 12, 20]
+Iterasi ke- 4 :
+[0, 1, 5, 4, 2, 11, 12, 20]
+[0, 1, 5, 4, 2, 11, 12, 20]
+[0, 1, 4, 5, 2, 11, 12, 20]
+[0, 1, 4, 2, 5, 11, 12, 20]
+Iterasi ke- 5 :
+[0, 1, 4, 2, 5, 11, 12, 20]
+[0, 1, 4, 2, 5, 11, 12, 20]
+[0, 1, 2, 4, 5, 11, 12, 20]
+Iterasi ke- 6 :
+[0, 1, 2, 4, 5, 11, 12, 20]
+[0, 1, 2, 4, 5, 11, 12, 20]
+Iterasi ke- 7 :
+[0, 1, 2, 4, 5, 11, 12, 20]
+Iterasi ke- 8 :
+Data urut- [0, 1, 2, 4, 5, 11, 12, 20]
+--
+Data yang akan diurutkan :  [12, 11, 5, 1, 0]
+Iterasi ke- 1 :
+[11, 12, 5, 1, 0]
+[11, 5, 12, 1, 0]
+[11, 5, 1, 12, 0]
+[11, 5, 1, 0, 12]
+Iterasi ke- 2 :
+[5, 11, 1, 0, 12]
+[5, 1, 11, 0, 12]
+[5, 1, 0, 11, 12]
+Iterasi ke- 3 :
+[1, 5, 0, 11, 12]
+[1, 0, 5, 11, 12]
+Iterasi ke- 4 :
+[0, 1, 5, 11, 12]
+Iterasi ke- 5 :
+Data urut- [0, 1, 5, 11, 12]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">=</span><span class="p">[</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">bubbleSort</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data yang akan diurutkan :  [11, 12, 1, 5, 0]
+Iterasi ke- 1 :
+[11, 12, 1, 5, 0]
+[11, 1, 12, 5, 0]
+[11, 1, 5, 12, 0]
+[11, 1, 5, 0, 12]
+Iterasi ke- 2 :
+[1, 11, 5, 0, 12]
+[1, 5, 11, 0, 12]
+[1, 5, 0, 11, 12]
+Iterasi ke- 3 :
+[1, 5, 0, 11, 12]
+[1, 0, 5, 11, 12]
+Iterasi ke- 4 :
+[0, 1, 5, 11, 12]
+Iterasi ke- 5 :
+Data urut- [0, 1, 5, 11, 12]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 2, 5, 8, 1, 20, 2, 2, 4]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">bubbleSort</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data yang akan diurutkan :  [10, 2, 5, 8, 1, 20, 2, 2, 4]
+Iterasi ke- 1 :
+[2, 10, 5, 8, 1, 20, 2, 2, 4]
+[2, 5, 10, 8, 1, 20, 2, 2, 4]
+[2, 5, 8, 10, 1, 20, 2, 2, 4]
+[2, 5, 8, 1, 10, 20, 2, 2, 4]
+[2, 5, 8, 1, 10, 20, 2, 2, 4]
+[2, 5, 8, 1, 10, 2, 20, 2, 4]
+[2, 5, 8, 1, 10, 2, 2, 20, 4]
+[2, 5, 8, 1, 10, 2, 2, 4, 20]
+Iterasi ke- 2 :
+[2, 5, 8, 1, 10, 2, 2, 4, 20]
+[2, 5, 8, 1, 10, 2, 2, 4, 20]
+[2, 5, 1, 8, 10, 2, 2, 4, 20]
+[2, 5, 1, 8, 10, 2, 2, 4, 20]
+[2, 5, 1, 8, 2, 10, 2, 4, 20]
+[2, 5, 1, 8, 2, 2, 10, 4, 20]
+[2, 5, 1, 8, 2, 2, 4, 10, 20]
+Iterasi ke- 3 :
+[2, 5, 1, 8, 2, 2, 4, 10, 20]
+[2, 1, 5, 8, 2, 2, 4, 10, 20]
+[2, 1, 5, 8, 2, 2, 4, 10, 20]
+[2, 1, 5, 2, 8, 2, 4, 10, 20]
+[2, 1, 5, 2, 2, 8, 4, 10, 20]
+[2, 1, 5, 2, 2, 4, 8, 10, 20]
+Iterasi ke- 4 :
+[1, 2, 5, 2, 2, 4, 8, 10, 20]
+[1, 2, 5, 2, 2, 4, 8, 10, 20]
+[1, 2, 2, 5, 2, 4, 8, 10, 20]
+[1, 2, 2, 2, 5, 4, 8, 10, 20]
+[1, 2, 2, 2, 4, 5, 8, 10, 20]
+Iterasi ke- 5 :
+[1, 2, 2, 2, 4, 5, 8, 10, 20]
+[1, 2, 2, 2, 4, 5, 8, 10, 20]
+[1, 2, 2, 2, 4, 5, 8, 10, 20]
+[1, 2, 2, 2, 4, 5, 8, 10, 20]
+Iterasi ke- 6 :
+[1, 2, 2, 2, 4, 5, 8, 10, 20]
+[1, 2, 2, 2, 4, 5, 8, 10, 20]
+[1, 2, 2, 2, 4, 5, 8, 10, 20]
+Iterasi ke- 7 :
+[1, 2, 2, 2, 4, 5, 8, 10, 20]
+[1, 2, 2, 2, 4, 5, 8, 10, 20]
+Iterasi ke- 8 :
+[1, 2, 2, 2, 4, 5, 8, 10, 20]
+Iterasi ke- 9 :
+Data urut- [1, 2, 2, 2, 4, 5, 8, 10, 20]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>3_2-selectionSort</strong></p>
+<p><strong>Selection Sort</strong></p>
+<p>Algoritma sorting yang kedua adalah Selection Sort. Penjelasan algoritma ini dibagi menjadi dua bagian yaitu :</p>
+<p><strong>Algoritma Selection Sort</strong></p>
+<p>Algoritma selection sort memiliki waktu komputasi yang lebih cepat dibandingkan dengan algoritma bubble sort. Hal ini dikarenakan terjadi reduksi waktu pada saat proses pertukaran
+data. Jika algoritma bubble sort, pada setiap iterasi,setiap dua data yang berdekatan akan dibandingkan, dan akan dilakukan pertukaran data jika syarat memenuhi. Maka pada algoritma selection sort tidak akan melakukan dua proses ini (perbandingan dan pertukaran) pada satu waktu,
+akan tetapi, pada algoritma selection sort, akan dicari data yang memenuhi syarat terlebih dahulu
+(perbandingan data), kemudian data yang terpilih ini ini akan diletakkan pada indeks data yang
+tepat. Oleh karena itu algoritma ini dinamakan selection (pemilihan data).
+Berikut tahapan algoritma selection sort (ascending order): 1. Algoritma ini dimulai dari indeks awal sampai dengan indeks akhir data 2. Cari data dengan nilai paling minimal (dari indeks
+awal sampai dengan indeks akhir) melalui proses perbandingan 3. Letakkan data minimal ini
+di indeks awal 4. Ulangi lagi proses pencarian data paling minimal (dari indeks awal+1 sampai
+dengan indeks akhir, karena indeks awal sudah terisi data yang tepat). 5. Letakkan data ini pada
+indeks awal+1 6. Ulangi lagi proses pencarian data paling minimal (dari indeks awal+2 sampai
+dengan akhir) dan letakkan data ini pada indeks awal+2, dst.
+Berikut ilustrasi algoritma selection sort ini. Misalkan terdapat suatu data, yaitu [7, 2.5, 5, 10,
+1]. Maka proses pengurutan secara ascending (dari nilai kecil sampai dengna nilai besar) dengan
+menggunakan algoritma Selection Sort adalah sebagai berikut :
+Iterasi Pertama. Pada iterasi pertama ini, data yang memiliki nilai paling kecil, akan menempati posisi dengan indeks paling awal. Untuk mencari data dengan nilai paling kecil ini, dilakukan perbandingan sebagai berikut: 1. antara indeks ke-0 dengan ke-1, sehingga nilai terkecil
+saat ini adalah 2.5 2. antara indeks ke-1 dengan ke-2, nilai terkecil tetaplah 2.5 3. antara indeks
+ke-2 dengan ke-3, nilai terkecil tetaplah 2.5 2. antara indeks ke-3 dengan ke-4, didapatkan nilai
+terkecil adalah 1. Pada saat pencarian nilai terkecil ini tidak dilakukan proses pertukaran posisi
+(berbeda dengan a;goritma bubble sort). Setelah didapatkan nilai terkecil, maka nilai 1 ini akan
+ditukar dengan data pada posisi dengan indeks ke-0, sehingga setelah iterasi pertama berakhir,
+data 1, akan menempati indeks ke-0. Ilustrasi iterasi pertama ini dapat dilihat pada Gambar 1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">selectionSort</span><span class="p">(</span><span class="n">listData</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Algoritma Selection Sort konvensional&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data Awal=&#39;</span><span class="p">,</span><span class="n">listData</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">outIter</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">listData</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">minIndex</span><span class="o">=</span><span class="n">outIter</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">outIter</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">listData</span><span class="p">)):</span>
+            <span class="k">if</span> <span class="n">listData</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&lt;</span><span class="n">listData</span><span class="p">[</span><span class="n">minIndex</span><span class="p">]:</span>
+                <span class="n">minIndex</span><span class="o">=</span><span class="n">i</span>
+        <span class="n">temp</span><span class="o">=</span><span class="n">listData</span><span class="p">[</span><span class="n">outIter</span><span class="p">]</span>
+        <span class="n">listData</span><span class="p">[</span><span class="n">outIter</span><span class="p">]</span><span class="o">=</span><span class="n">listData</span><span class="p">[</span><span class="n">minIndex</span><span class="p">]</span>
+        <span class="n">listData</span><span class="p">[</span><span class="n">minIndex</span><span class="p">]</span><span class="o">=</span><span class="n">temp</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Iterasi ke-&#39;</span><span class="p">,</span><span class="n">outIter</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="n">listData</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Data Urut=&#39;</span><span class="p">,</span><span class="n">listData</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">selectionSort</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Algoritma Selection Sort konvensional
+Data Awal= [10, 2, 5, 8, 1, 20, 7, 12, 4]
+Iterasi ke- 1 : [1, 2, 5, 8, 10, 20, 7, 12, 4]
+Data Urut= [1, 2, 5, 8, 10, 20, 7, 12, 4]
+Iterasi ke- 2 : [1, 2, 5, 8, 10, 20, 7, 12, 4]
+Data Urut= [1, 2, 5, 8, 10, 20, 7, 12, 4]
+Iterasi ke- 3 : [1, 2, 4, 8, 10, 20, 7, 12, 5]
+Data Urut= [1, 2, 4, 8, 10, 20, 7, 12, 5]
+Iterasi ke- 4 : [1, 2, 4, 5, 10, 20, 7, 12, 8]
+Data Urut= [1, 2, 4, 5, 10, 20, 7, 12, 8]
+Iterasi ke- 5 : [1, 2, 4, 5, 7, 20, 10, 12, 8]
+Data Urut= [1, 2, 4, 5, 7, 20, 10, 12, 8]
+Iterasi ke- 6 : [1, 2, 4, 5, 7, 8, 10, 12, 20]
+Data Urut= [1, 2, 4, 5, 7, 8, 10, 12, 20]
+Iterasi ke- 7 : [1, 2, 4, 5, 7, 8, 10, 12, 20]
+Data Urut= [1, 2, 4, 5, 7, 8, 10, 12, 20]
+Iterasi ke- 8 : [1, 2, 4, 5, 7, 8, 10, 12, 20]
+Data Urut= [1, 2, 4, 5, 7, 8, 10, 12, 20]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Modifikasi code selection sort tersebut, agar iterasi dalam melakukan dua buah pencarian,
+yaitu nilai minimal dan maksimal, jika sudah ditemukan, maka letakkan nilai minimal pada
+indeks-indeks awal, dan nilai maksimal pada indeks-indeks akhir</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tugas1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">PERCOBAAN ARCHIVE 1 : BARU</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="BubbleSort_And_SelectionSort.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Bubblesort dan SelectionSort</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 210411100002 - Mohammad Iqbal Surya Ramadhan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
