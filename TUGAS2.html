@@ -1,0 +1,1155 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUGAS 2: TEXT PREPROCESSING NLP PYTHON &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'TUGAS2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="TUGAS UTS : UTS PROJECT SEDERHANA NLP PYTHON" href="PBA-TUGAS3.html" />
+    <link rel="prev" title="PERCOBAAN ARCHIVE 1 : BARU" href="tugas1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/fotoku.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/fotoku.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tugas1.html">PERCOBAAN ARCHIVE 1 : BARU</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">TUGAS 2: TEXT PREPROCESSING NLP PYTHON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PBA-TUGAS3.html">TUGAS UTS : UTS PROJECT SEDERHANA NLP PYTHON</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTUGAS2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/TUGAS2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>TUGAS 2: TEXT PREPROCESSING NLP PYTHON</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="tugas-2-text-preprocessing-nlp-python">
+<h1>TUGAS 2: TEXT PREPROCESSING NLP PYTHON<a class="headerlink" href="#tugas-2-text-preprocessing-nlp-python" title="Permalink to this heading">#</a></h1>
+<p>#<strong>Sumber</strong> : <a class="reference external" href="https://news.detik.com/berita/d-6636747/wanita-indramayu-dihipnotis-saat-cari-kerja-di-bogor-duit-ijazah-raib">https://news.detik.com/berita/d-6636747/wanita-indramayu-dihipnotis-saat-cari-kerja-di-bogor-duit-ijazah-raib</a></p>
+<p>NAMA : MOHAMMAD IQBAL SURYA RAMADHAN</p>
+<p>NIM  : 210411100002</p>
+<p>PBA - B</p>
+<p>NLPpreproc_210411100002_2</p>
+<p>#<strong>Tahap Persiapan</strong> : Library yang dibutuhkan</p>
+<ol class="arabic simple">
+<li><p>Mengistal Natural Language Toolkit (NLTK)</p></li>
+</ol>
+<p>Natural Language Toolkit atau disingkat NLTK, adalah libray python untuk bekerja dengan permodelan teks. NLTK menyediakan alat yang baik mempersiapkan teks sebelum digunakan pada machine learning atau algoritma deep learning. Cara termudah untuk menginstall NLTK adalah menggunakan “pip” pada command line/terminal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">nltk</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Requirement already satisfied: nltk in /usr/local/lib/python3.9/dist-packages (3.8.1)
+Requirement already satisfied: click in /usr/local/lib/python3.9/dist-packages (from nltk) (8.1.3)
+Requirement already satisfied: joblib in /usr/local/lib/python3.9/dist-packages (from nltk) (1.1.1)
+Requirement already satisfied: regex&gt;=2021.8.3 in /usr/local/lib/python3.9/dist-packages (from nltk) (2022.10.31)
+Requirement already satisfied: tqdm in /usr/local/lib/python3.9/dist-packages (from nltk) (4.65.0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Import nltk</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;all&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading collection &#39;all&#39;
+[nltk_data]    | 
+[nltk_data]    | Downloading package abc to /root/nltk_data...
+[nltk_data]    |   Package abc is already up-to-date!
+[nltk_data]    | Downloading package alpino to /root/nltk_data...
+[nltk_data]    |   Package alpino is already up-to-date!
+[nltk_data]    | Downloading package averaged_perceptron_tagger to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Package averaged_perceptron_tagger is already up-
+[nltk_data]    |       to-date!
+[nltk_data]    | Downloading package averaged_perceptron_tagger_ru to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Package averaged_perceptron_tagger_ru is already
+[nltk_data]    |       up-to-date!
+[nltk_data]    | Downloading package basque_grammars to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Package basque_grammars is already up-to-date!
+[nltk_data]    | Downloading package bcp47 to /root/nltk_data...
+[nltk_data]    |   Package bcp47 is already up-to-date!
+[nltk_data]    | Downloading package biocreative_ppi to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Package biocreative_ppi is already up-to-date!
+[nltk_data]    | Downloading package bllip_wsj_no_aux to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Package bllip_wsj_no_aux is already up-to-date!
+[nltk_data]    | Downloading package book_grammars to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Package book_grammars is already up-to-date!
+[nltk_data]    | Downloading package brown to /root/nltk_data...
+[nltk_data]    |   Package brown is already up-to-date!
+[nltk_data]    | Downloading package brown_tei to /root/nltk_data...
+[nltk_data]    |   Package brown_tei is already up-to-date!
+[nltk_data]    | Downloading package cess_cat to /root/nltk_data...
+[nltk_data]    |   Package cess_cat is already up-to-date!
+[nltk_data]    | Downloading package cess_esp to /root/nltk_data...
+[nltk_data]    |   Package cess_esp is already up-to-date!
+[nltk_data]    | Downloading package chat80 to /root/nltk_data...
+[nltk_data]    |   Package chat80 is already up-to-date!
+[nltk_data]    | Downloading package city_database to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Package city_database is already up-to-date!
+[nltk_data]    | Downloading package cmudict to /root/nltk_data...
+[nltk_data]    |   Package cmudict is already up-to-date!
+[nltk_data]    | Downloading package comparative_sentences to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Package comparative_sentences is already up-to-
+[nltk_data]    |       date!
+[nltk_data]    | Downloading package comtrans to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Package comtrans is already up-to-date!
+[nltk_data]    | Downloading package conll2000 to /root/nltk_data...
+[nltk_data]    |   Package conll2000 is already up-to-date!
+[nltk_data]    | Downloading package conll2002 to /root/nltk_data...
+[nltk_data]    |   Package conll2002 is already up-to-date!
+[nltk_data]    | Downloading package conll2007 to /root/nltk_data...
+[nltk_data]    |   Package conll2007 is already up-to-date!
+[nltk_data]    | Downloading package crubadan to /root/nltk_data...
+[nltk_data]    |   Package crubadan is already up-to-date!
+[nltk_data]    | Downloading package dependency_treebank to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Package dependency_treebank is already up-to-date!
+[nltk_data]    | Downloading package dolch to /root/nltk_data...
+[nltk_data]    |   Package dolch is already up-to-date!
+[nltk_data]    | Downloading package europarl_raw to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Package europarl_raw is already up-to-date!
+[nltk_data]    | Downloading package extended_omw to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Package extended_omw is already up-to-date!
+[nltk_data]    | Downloading package floresta to /root/nltk_data...
+[nltk_data]    |   Package floresta is already up-to-date!
+[nltk_data]    | Downloading package framenet_v15 to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Package framenet_v15 is already up-to-date!
+[nltk_data]    | Downloading package framenet_v17 to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Package framenet_v17 is already up-to-date!
+[nltk_data]    | Downloading package gazetteers to /root/nltk_data...
+[nltk_data]    |   Package gazetteers is already up-to-date!
+[nltk_data]    | Downloading package genesis to /root/nltk_data...
+[nltk_data]    |   Package genesis is already up-to-date!
+[nltk_data]    | Downloading package gutenberg to /root/nltk_data...
+[nltk_data]    |   Package gutenberg is already up-to-date!
+[nltk_data]    | Downloading package ieer to /root/nltk_data...
+[nltk_data]    |   Package ieer is already up-to-date!
+[nltk_data]    | Downloading package inaugural to /root/nltk_data...
+[nltk_data]    |   Package inaugural is already up-to-date!
+[nltk_data]    | Downloading package indian to /root/nltk_data...
+[nltk_data]    |   Package indian is already up-to-date!
+[nltk_data]    | Downloading package jeita to /root/nltk_data...
+[nltk_data]    |   Package jeita is already up-to-date!
+[nltk_data]    | Downloading package kimmo to /root/nltk_data...
+[nltk_data]    |   Package kimmo is already up-to-date!
+[nltk_data]    | Downloading package knbc to /root/nltk_data...
+[nltk_data]    |   Package knbc is already up-to-date!
+[nltk_data]    | Downloading package large_grammars to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Package large_grammars is already up-to-date!
+[nltk_data]    | Downloading package lin_thesaurus to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Package lin_thesaurus is already up-to-date!
+[nltk_data]    | Downloading package mac_morpho to /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/mac_morpho.zip.
+[nltk_data]    | Downloading package machado to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package masc_tagged to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package maxent_ne_chunker to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping chunkers/maxent_ne_chunker.zip.
+[nltk_data]    | Downloading package maxent_treebank_pos_tagger to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping taggers/maxent_treebank_pos_tagger.zip.
+[nltk_data]    | Downloading package moses_sample to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping models/moses_sample.zip.
+[nltk_data]    | Downloading package movie_reviews to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/movie_reviews.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package mte_teip5 to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/mte_teip5.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package mwa_ppdb to /root/nltk_data...
+[nltk_data]    |   Unzipping misc/mwa_ppdb.zip.
+[nltk_data]    | Downloading package names to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/names.zip.
+[nltk_data]    | Downloading package nombank.1.0 to /root/nltk_data...
+[nltk_data]    | Downloading package nonbreaking_prefixes to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/nonbreaking_prefixes.zip.
+[nltk_data]    | Downloading package nps_chat to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/nps_chat.zip.
+[nltk_data]    | Downloading package omw to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package omw-1.4 to /root/nltk_data...
+[nltk_data]    | Downloading package opinion_lexicon to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/opinion_lexicon.zip.
+[nltk_data]    | Downloading package panlex_swadesh to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package paradigms to /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/paradigms.zip.
+[nltk_data]    | Downloading package pe08 to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/pe08.zip.
+[nltk_data]    | Downloading package perluniprops to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Unzipping misc/perluniprops.zip.
+[nltk_data]    | Downloading package pil to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/pil.zip.
+[nltk_data]    | Downloading package pl196x to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/pl196x.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package porter_test to /root/nltk_data...
+[nltk_data]    |   Unzipping stemmers/porter_test.zip.
+[nltk_data]    | Downloading package ppattach to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/ppattach.zip.
+[nltk_data]    | Downloading package problem_reports to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/problem_reports.zip.
+[nltk_data]    | Downloading package product_reviews_1 to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/product_reviews_1.zip.
+[nltk_data]    | Downloading package product_reviews_2 to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/product_reviews_2.zip.
+[nltk_data]    | Downloading package propbank to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package pros_cons to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/pros_cons.zip.
+[nltk_data]    | Downloading package ptb to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/ptb.zip.
+[nltk_data]    | Downloading package punkt to /root/nltk_data...
+[nltk_data]    |   Unzipping tokenizers/punkt.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package qc to /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/qc.zip.
+[nltk_data]    | Downloading package reuters to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package rslp to /root/nltk_data...
+[nltk_data]    |   Unzipping stemmers/rslp.zip.
+[nltk_data]    | Downloading package rte to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/rte.zip.
+[nltk_data]    | Downloading package sample_grammars to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Unzipping grammars/sample_grammars.zip.
+[nltk_data]    | Downloading package semcor to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package senseval to /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/senseval.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package sentence_polarity to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/sentence_polarity.zip.
+[nltk_data]    | Downloading package sentiwordnet to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/sentiwordnet.zip.
+[nltk_data]    | Downloading package shakespeare to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/shakespeare.zip.
+[nltk_data]    | Downloading package sinica_treebank to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/sinica_treebank.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package smultron to /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/smultron.zip.
+[nltk_data]    | Downloading package snowball_data to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package spanish_grammars to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Unzipping grammars/spanish_grammars.zip.
+[nltk_data]    | Downloading package state_union to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/state_union.zip.
+[nltk_data]    | Downloading package stopwords to /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/stopwords.zip.
+[nltk_data]    | Downloading package subjectivity to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/subjectivity.zip.
+[nltk_data]    | Downloading package swadesh to /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/swadesh.zip.
+[nltk_data]    | Downloading package switchboard to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/switchboard.zip.
+[nltk_data]    | Downloading package tagsets to /root/nltk_data...
+[nltk_data]    |   Unzipping help/tagsets.zip.
+[nltk_data]    | Downloading package timit to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/timit.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package toolbox to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/toolbox.zip.
+[nltk_data]    | Downloading package treebank to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/treebank.zip.
+[nltk_data]    | Downloading package twitter_samples to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/twitter_samples.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package udhr to /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/udhr.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package udhr2 to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/udhr2.zip.
+[nltk_data]    | Downloading package unicode_samples to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/unicode_samples.zip.
+[nltk_data]    | Downloading package universal_tagset to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    |   Unzipping taggers/universal_tagset.zip.
+[nltk_data]    | Downloading package universal_treebanks_v20 to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package vader_lexicon to
+[nltk_data]    |     /root/nltk_data...
+[nltk_data]    | Downloading package verbnet to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/verbnet.zip.
+[nltk_data]    | Downloading package verbnet3 to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/verbnet3.zip.
+[nltk_data]    | Downloading package webtext to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/webtext.zip.
+[nltk_data]    | Downloading package wmt15_eval to /root/nltk_data...
+[nltk_data]    |   Unzipping models/wmt15_eval.zip.
+[nltk_data]    | Downloading package word2vec_sample to
+[nltk_data]    |     /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping models/word2vec_sample.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package wordnet to /root/nltk_data...
+[nltk_data]    | Downloading package wordnet2021 to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package wordnet2022 to /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/wordnet2022.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package wordnet31 to /root/nltk_data...
+[nltk_data]    | Downloading package wordnet_ic to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/wordnet_ic.zip.
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    | Downloading package words to /root/nltk_data...
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data]    |   Unzipping corpora/words.zip.
+[nltk_data]    | Downloading package ycoe to /root/nltk_data...
+[nltk_data]    |   Unzipping corpora/ycoe.zip.
+[nltk_data]    | 
+[nltk_data]  Done downloading collection all
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>Python Sastrawi</p></li>
+</ol>
+<p>Pengembangan dari proyek PHP Sastrawi. Python Sastrawi merupakan library sederhana yang dapat mengubah kata berimbuhan bahasa Indonesia menjadi bentuk dasarnya. Sastrawi juga dapat diinstal melalui “pip”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Sastrawi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting Sastrawi
+  Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
+?25l     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">0.0/209.7 KB</span> <span class=" -Color -Color-Red">?</span> eta <span class=" -Color -Color-Cyan">-:--:--</span>
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 KB</span> <span class=" -Color -Color-Red">12.4 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25h
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Installing collected packages: Sastrawi
+Successfully installed Sastrawi-1.0.1
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Case folding</strong></p>
+<p>Case folding adalah salah satu bentuk text preprocessing yang paling sederhana dan efektif meskipun sering diabaikan. Tujuan dari case folding untuk mengubah semua huruf dalam dokumen menjadi huruf kecil. Hanya huruf ‘a’ sampai ‘z’ yang diterima. Karakter selain huruf dihilangkan dan dianggap delimiter. Pada tahap ini tidak menggunakan external library apapun, kita bisa memanfaatkan modul yang tersedia di python.</p>
+<p>Ada beberapa cara yang dapat digunakan dalam tahap case foldin Diantaranya:</p>
+<p>A. Mengubah text menjadi lowercase</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Peristiwa terjadi ketika Ayu baru saja tiba di Stasiun Bogor untuk mencari kerja. Ketika sedang menunggu ojek online, tiba-tiba Ayu dihampiri seorang pria dan menepuk bahunya.&quot;</span>
+<span class="n">lower_case</span> <span class="o">=</span> <span class="n">kalimat</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lower_case</span><span class="p">)</span>
+<span class="c1"># output</span>
+<span class="c1"># Merubah kapital</span>
+<span class="c1"># berikut ini adalah 5 negara dengan pendidikan terbaik di dunia adalah korea selatan, jepang, singapura, hong kong, dan finlandia.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>peristiwa terjadi ketika ayu baru saja tiba di stasiun bogor untuk mencari kerja. ketika sedang menunggu ojek online, tiba-tiba ayu dihampiri seorang pria dan menepuk bahunya.
+</pre></div>
+</div>
+</div>
+</div>
+<p>B. Menghapus tanda baca</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">string</span>
+
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Peristiwa terjadi ketika Ayu baru saja tiba di Stasiun Bogor untuk mencari kerja. Ketika sedang menunggu ojek online, tiba-tiba Ayu dihampiri seorang pria dan menepuk bahunya.&quot;</span>
+<span class="n">hasil</span> <span class="o">=</span> <span class="n">kalimat</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Peristiwa terjadi ketika Ayu baru saja tiba di Stasiun Bogor untuk mencari kerja Ketika sedang menunggu ojek online tibatiba Ayu dihampiri seorang pria dan menepuk bahunya
+</pre></div>
+</div>
+</div>
+</div>
+<p>C. Separating Sentences with Split () Method</p>
+<p>Fungsi <code class="docutils literal notranslate"><span class="pre">split()</span></code> memisahkan <em>string</em> ke dalam <em>list</em> dengan spasi sebagai pemisah jika tidak ditentukan pemisahnya.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Peristiwa terjadi ketika Ayu baru saja tiba di Stasiun Bogor untuk mencari kerja. Ketika sedang menunggu ojek online, tiba-tiba Ayu dihampiri seorang pria dan menepuk bahunya.&quot;</span>
+<span class="n">pisah</span> <span class="o">=</span> <span class="n">kalimat</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pisah</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Peristiwa&#39;, &#39;terjadi&#39;, &#39;ketika&#39;, &#39;Ayu&#39;, &#39;baru&#39;, &#39;saja&#39;, &#39;tiba&#39;, &#39;di&#39;, &#39;Stasiun&#39;, &#39;Bogor&#39;, &#39;untuk&#39;, &#39;mencari&#39;, &#39;kerja.&#39;, &#39;Ketika&#39;, &#39;sedang&#39;, &#39;menunggu&#39;, &#39;ojek&#39;, &#39;online,&#39;, &#39;tiba-tiba&#39;, &#39;Ayu&#39;, &#39;dihampiri&#39;, &#39;seorang&#39;, &#39;pria&#39;, &#39;dan&#39;, &#39;menepuk&#39;, &#39;bahunya.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>2. Tokenizing</strong></p>
+<p>A. Tokenizing kata</p>
+<p>Sebuah kalimat atau data dapat dipisah menjadi kata-kata dengan kelas word_tokenize() pada modul NLTK.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># impor word_tokenize dari modul nltk</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span> 
+ 
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Peristiwa terjadi ketika Ayu baru saja tiba di Stasiun Bogor untuk mencari kerja. Ketika sedang menunggu ojek online, tiba-tiba Ayu dihampiri seorang pria dan menepuk bahunya.&quot;</span>
+ 
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Peristiwa&#39;, &#39;terjadi&#39;, &#39;ketika&#39;, &#39;Ayu&#39;, &#39;baru&#39;, &#39;saja&#39;, &#39;tiba&#39;, &#39;di&#39;, &#39;Stasiun&#39;, &#39;Bogor&#39;, &#39;untuk&#39;, &#39;mencari&#39;, &#39;kerja&#39;, &#39;.&#39;, &#39;Ketika&#39;, &#39;sedang&#39;, &#39;menunggu&#39;, &#39;ojek&#39;, &#39;online&#39;, &#39;,&#39;, &#39;tiba-tiba&#39;, &#39;Ayu&#39;, &#39;dihampiri&#39;, &#39;seorang&#39;, &#39;pria&#39;, &#39;dan&#39;, &#39;menepuk&#39;, &#39;bahunya&#39;, &#39;.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>B.  Frequency Distribution</p>
+<p>Kita juga bisa mendapatkan informasi frekuensi kemunculan setiap token dengan kelas FreqDist() yang sudah tersedia pada modul NLTK.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk.probability</span> <span class="kn">import</span> <span class="n">FreqDist</span>
+
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Peristiwa terjadi ketika Ayu baru saja tiba di Stasiun Bogor untuk mencari kerja. Ketika sedang menunggu ojek online, tiba-tiba Ayu dihampiri seorang pria dan menepuk bahunya.&quot;</span>
+<span class="n">kalimat</span> <span class="o">=</span> <span class="n">kalimat</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+ 
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span>
+<span class="n">kemunculan</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">FreqDist</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">kemunculan</span><span class="o">.</span><span class="n">most_common</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;ketika&#39;, 2), (&#39;ayu&#39;, 2), (&#39;peristiwa&#39;, 1), (&#39;terjadi&#39;, 1), (&#39;baru&#39;, 1), (&#39;saja&#39;, 1), (&#39;tiba&#39;, 1), (&#39;di&#39;, 1), (&#39;stasiun&#39;, 1), (&#39;bogor&#39;, 1), (&#39;untuk&#39;, 1), (&#39;mencari&#39;, 1), (&#39;kerja&#39;, 1), (&#39;sedang&#39;, 1), (&#39;menunggu&#39;, 1), (&#39;ojek&#39;, 1), (&#39;online&#39;, 1), (&#39;tibatiba&#39;, 1), (&#39;dihampiri&#39;, 1), (&#39;seorang&#39;, 1), (&#39;pria&#39;, 1), (&#39;dan&#39;, 1), (&#39;menepuk&#39;, 1), (&#39;bahunya&#39;, 1)]
+</pre></div>
+</div>
+</div>
+</div>
+<p>C. Frequency Distribution Visualization with Matplotlib</p>
+<p>Untuk menggambarkan ke dalam bentuk grafik, kita perlu menginstall library Matplotlib.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">kemunculan</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="n">cumulative</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b87a430d7287842cecd0e2e3fdc429676f5be36f9ff25844d9408a7e5333611f.png" src="_images/b87a430d7287842cecd0e2e3fdc429676f5be36f9ff25844d9408a7e5333611f.png" />
+</div>
+</div>
+<p><strong>Tokenizing: Sentences Tokenizing Using NLTK Module</strong></p>
+<p>Memisahkan kalimat dalam sebuah paragraf.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">sent_tokenize</span>
+
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Peristiwa terjadi ketika Ayu baru saja tiba di Stasiun Bogor untuk mencari kerja. Ketika sedang menunggu ojek online, tiba-tiba Ayu dihampiri seorang pria dan menepuk bahunya.&quot;</span>
+ 
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Peristiwa terjadi ketika Ayu baru saja tiba di Stasiun Bogor untuk mencari kerja.&#39;, &#39;Ketika sedang menunggu ojek online, tiba-tiba Ayu dihampiri seorang pria dan menepuk bahunya.&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Filtering using NLTK</strong></p>
+<p>Filtering adalah tahap mengambil kata-kata penting dari hasil token dengan menggunakan algoritma stoplist (membuang kata kurang penting) atau wordlist (menyimpan kata penting).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">sent_tokenize</span><span class="p">,</span> <span class="n">word_tokenize</span>
+<span class="kn">from</span> <span class="nn">nltk.corpus</span> <span class="kn">import</span> <span class="n">stopwords</span>
+ 
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Peristiwa terjadi ketika Ayu baru saja tiba di Stasiun Bogor untuk mencari kerja. Ketika sedang menunggu ojek online, tiba-tiba Ayu dihampiri seorang pria dan menepuk bahunya.&quot;</span>
+<span class="n">kalimat</span> <span class="o">=</span> <span class="n">kalimat</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+ 
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">word_tokenize</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span>
+<span class="n">listStopword</span> <span class="o">=</span>  <span class="nb">set</span><span class="p">(</span><span class="n">stopwords</span><span class="o">.</span><span class="n">words</span><span class="p">(</span><span class="s1">&#39;indonesian&#39;</span><span class="p">))</span>
+ 
+<span class="n">removed</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">tokens</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">t</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">listStopword</span><span class="p">:</span>
+        <span class="n">removed</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+ 
+<span class="nb">print</span><span class="p">(</span><span class="n">removed</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;peristiwa&#39;, &#39;ayu&#39;, &#39;stasiun&#39;, &#39;bogor&#39;, &#39;mencari&#39;, &#39;kerja&#39;, &#39;menunggu&#39;, &#39;ojek&#39;, &#39;online&#39;, &#39;tibatiba&#39;, &#39;ayu&#39;, &#39;dihampiri&#39;, &#39;pria&#39;, &#39;menepuk&#39;, &#39;bahunya&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Filtering using Sastrawi: Stopword List</strong></p>
+<p>Melihat daftar stopword pada Sastrawi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Sastrawi.StopWordRemover.StopWordRemoverFactory</span> <span class="kn">import</span> <span class="n">StopWordRemoverFactory</span>
+ 
+<span class="n">factory</span> <span class="o">=</span> <span class="n">StopWordRemoverFactory</span><span class="p">()</span>
+<span class="n">stopwords</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">get_stop_words</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">stopwords</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;yang&#39;, &#39;untuk&#39;, &#39;pada&#39;, &#39;ke&#39;, &#39;para&#39;, &#39;namun&#39;, &#39;menurut&#39;, &#39;antara&#39;, &#39;dia&#39;, &#39;dua&#39;, &#39;ia&#39;, &#39;seperti&#39;, &#39;jika&#39;, &#39;jika&#39;, &#39;sehingga&#39;, &#39;kembali&#39;, &#39;dan&#39;, &#39;tidak&#39;, &#39;ini&#39;, &#39;karena&#39;, &#39;kepada&#39;, &#39;oleh&#39;, &#39;saat&#39;, &#39;harus&#39;, &#39;sementara&#39;, &#39;setelah&#39;, &#39;belum&#39;, &#39;kami&#39;, &#39;sekitar&#39;, &#39;bagi&#39;, &#39;serta&#39;, &#39;di&#39;, &#39;dari&#39;, &#39;telah&#39;, &#39;sebagai&#39;, &#39;masih&#39;, &#39;hal&#39;, &#39;ketika&#39;, &#39;adalah&#39;, &#39;itu&#39;, &#39;dalam&#39;, &#39;bisa&#39;, &#39;bahwa&#39;, &#39;atau&#39;, &#39;hanya&#39;, &#39;kita&#39;, &#39;dengan&#39;, &#39;akan&#39;, &#39;juga&#39;, &#39;ada&#39;, &#39;mereka&#39;, &#39;sudah&#39;, &#39;saya&#39;, &#39;terhadap&#39;, &#39;secara&#39;, &#39;agar&#39;, &#39;lain&#39;, &#39;anda&#39;, &#39;begitu&#39;, &#39;mengapa&#39;, &#39;kenapa&#39;, &#39;yaitu&#39;, &#39;yakni&#39;, &#39;daripada&#39;, &#39;itulah&#39;, &#39;lagi&#39;, &#39;maka&#39;, &#39;tentang&#39;, &#39;demi&#39;, &#39;dimana&#39;, &#39;kemana&#39;, &#39;pula&#39;, &#39;sambil&#39;, &#39;sebelum&#39;, &#39;sesudah&#39;, &#39;supaya&#39;, &#39;guna&#39;, &#39;kah&#39;, &#39;pun&#39;, &#39;sampai&#39;, &#39;sedangkan&#39;, &#39;selagi&#39;, &#39;sementara&#39;, &#39;tetapi&#39;, &#39;apakah&#39;, &#39;kecuali&#39;, &#39;sebab&#39;, &#39;selain&#39;, &#39;seolah&#39;, &#39;seraya&#39;, &#39;seterusnya&#39;, &#39;tanpa&#39;, &#39;agak&#39;, &#39;boleh&#39;, &#39;dapat&#39;, &#39;dsb&#39;, &#39;dst&#39;, &#39;dll&#39;, &#39;dahulu&#39;, &#39;dulunya&#39;, &#39;anu&#39;, &#39;demikian&#39;, &#39;tapi&#39;, &#39;ingin&#39;, &#39;juga&#39;, &#39;nggak&#39;, &#39;mari&#39;, &#39;nanti&#39;, &#39;melainkan&#39;, &#39;oh&#39;, &#39;ok&#39;, &#39;seharusnya&#39;, &#39;sebetulnya&#39;, &#39;setiap&#39;, &#39;setidaknya&#39;, &#39;sesuatu&#39;, &#39;pasti&#39;, &#39;saja&#39;, &#39;toh&#39;, &#39;ya&#39;, &#39;walau&#39;, &#39;tolong&#39;, &#39;tentu&#39;, &#39;amat&#39;, &#39;apalagi&#39;, &#39;bagaimanapun&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Filtering using Sastrawi</strong></p>
+<p>Melihat daftar stopword pada sastrawi</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Sastrawi.StopWordRemover.StopWordRemoverFactory</span> <span class="kn">import</span> <span class="n">StopWordRemoverFactory</span>
+<span class="kn">from</span> <span class="nn">nltk.tokenize</span> <span class="kn">import</span> <span class="n">word_tokenize</span> 
+
+<span class="n">factory</span> <span class="o">=</span> <span class="n">StopWordRemoverFactory</span><span class="p">()</span>
+<span class="n">stopword</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stop_word_remover</span><span class="p">()</span>
+
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Peristiwa terjadi ketika Ayu baru saja tiba di Stasiun Bogor untuk mencari kerja. Ketika sedang menunggu ojek online, tiba-tiba Ayu dihampiri seorang pria dan menepuk bahunya.&quot;</span>
+<span class="n">kalimat</span> <span class="o">=</span> <span class="n">kalimat</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">maketrans</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="n">stop</span> <span class="o">=</span> <span class="n">stopword</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span>
+<span class="n">tokens</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">tokenize</span><span class="o">.</span><span class="n">word_tokenize</span><span class="p">(</span><span class="n">stop</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tokens</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;peristiwa&#39;, &#39;terjadi&#39;, &#39;ayu&#39;, &#39;baru&#39;, &#39;tiba&#39;, &#39;stasiun&#39;, &#39;bogor&#39;, &#39;mencari&#39;, &#39;kerja&#39;, &#39;sedang&#39;, &#39;menunggu&#39;, &#39;ojek&#39;, &#39;online&#39;, &#39;tibatiba&#39;, &#39;ayu&#39;, &#39;dihampiri&#39;, &#39;seorang&#39;, &#39;pria&#39;, &#39;menepuk&#39;, &#39;bahunya&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Stemming Bahasa Indonesia using Sastrawi</strong></p>
+<p>Proses stemming antara satu bahasa dengan bahasa yang lain tentu berbeda. Contohnya pada teks berbahasa inggris, proses yang diperlukan hanya proses menghilangkan sufiks. Sedangkan pada teks berbahasa Indonesia semua kata imbuhan baik itu sufiks dan prefiks juga dihilangkan.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">Sastrawi.Stemmer.StemmerFactory</span> <span class="kn">import</span> <span class="n">StemmerFactory</span>
+<span class="n">factory</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
+ 
+<span class="n">kalimat</span> <span class="o">=</span> <span class="s2">&quot;Peristiwa terjadi ketika Ayu baru saja tiba di Stasiun Bogor untuk mencari kerja. Ketika sedang menunggu ojek online, tiba-tiba Ayu dihampiri seorang pria dan menepuk bahunya.&quot;</span>
+
+<span class="n">hasil</span> <span class="o">=</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">kalimat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hasil</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>peristiwa jadi ketika ayu baru saja tiba di stasiun bogor untuk cari kerja ketika sedang tunggu ojek online tiba ayu hampir orang pria dan tepuk bahu
+</pre></div>
+</div>
+</div>
+</div>
+<p>#<strong>KESIMPULAN</strong> <strong>:</strong></p>
+<p>Text preprocessing pada NLP menggunakan Python merupakan suatu tahapan penting dalam pengolahan data teks yang akan digunakan dalam aplikasi NLP.</p>
+<p>Dan hasil yang telah saya peroleh dari percobaan setiap data , memiliki beberapa cara yang berbeda dalam melakukan preprocessing, seperti mengubah kata berimbuhan menjadi sebuah kata dasar, menghilangkan kata yang tidak penting dan lain sebagainya</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tugas1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">PERCOBAAN ARCHIVE 1 : BARU</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="PBA-TUGAS3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">TUGAS UTS : UTS PROJECT SEDERHANA NLP PYTHON</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 210411100002 - Mohammad Iqbal Surya Ramadhan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
