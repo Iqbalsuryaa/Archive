@@ -1,0 +1,894 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUGAS 3: UJICOBA COSINUS SIMILARITY PYTHON &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'TUGAS3TKI';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="TUGAS 2 PBA : TEXT PREPROCESSING NLP PYTHON" href="TUGAS2.html" />
+    <link rel="prev" title="PERCOBAAN ARCHIVE 1 : BARU" href="tugas1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/fotoku.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/fotoku.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tugas1.html">PERCOBAAN ARCHIVE 1 : BARU</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">TUGAS 3: UJICOBA COSINUS SIMILARITY PYTHON</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="TUGAS2.html">TUGAS 2 PBA : TEXT PREPROCESSING NLP PYTHON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PBA-TUGAS3.html">TUGAS UTS PBA : UTS PROJECT SEDERHANA NLP PYTHON</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTUGAS3TKI.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/TUGAS3TKI.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>TUGAS 3: UJICOBA COSINUS SIMILARITY PYTHON</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">TUGAS 3: UJICOBA COSINUS SIMILARITY PYTHON</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cosinus-similatarity-dengan-python">Cosinus Similatarity dengan python</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="tugas-3-ujicoba-cosinus-similarity-python">
+<h1>TUGAS 3: UJICOBA COSINUS SIMILARITY PYTHON<a class="headerlink" href="#tugas-3-ujicoba-cosinus-similarity-python" title="Permalink to this heading">#</a></h1>
+<p>Nama : MOHAMMAD IQBAL SURYA RAMADHAN</p>
+<p>NIM  : 210411100002</p>
+<p>KELAS: TKI - B</p>
+<p>cosim_210411100002_2</p>
+</div>
+<div class="tex2jax_ignore mathjax_ignore section" id="cosinus-similatarity-dengan-python">
+<h1>Cosinus Similatarity dengan python<a class="headerlink" href="#cosinus-similatarity-dengan-python" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span> 
+<span class="n">drive</span><span class="o">.</span><span class="n">mount</span> <span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">KeyboardInterrupt</span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-1-7b8d17d20502&gt;</span> in <span class="ni">&lt;cell line: 2&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">drive</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">drive</span><span class="o">.</span><span class="n">mount</span> <span class="p">(</span><span class="s1">&#39;/content/drive&#39;</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/google/colab/drive.py</span> in <span class="ni">mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, readonly)</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span> <span class="k">def</span> <span class="nf">mount</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">,</span> <span class="n">force_remount</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">timeout_ms</span><span class="o">=</span><span class="mi">120000</span><span class="p">,</span> <span class="n">readonly</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span><span class="w">   </span><span class="sd">&quot;&quot;&quot;Mount your Google Drive at the specified mountpoint path.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">103</span>   <span class="k">return</span> <span class="n">_mount</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>       <span class="n">mountpoint</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">105</span>       <span class="n">force_remount</span><span class="o">=</span><span class="n">force_remount</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/google/colab/drive.py</span> in <span class="ni">_mount</span><span class="nt">(mountpoint, force_remount, timeout_ms, ephemeral, readonly)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>   <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>   <span class="k">if</span> <span class="n">ephemeral</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">132</span>     <span class="n">_message</span><span class="o">.</span><span class="n">blocking_request</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span>         <span class="s1">&#39;request_auth&#39;</span><span class="p">,</span> <span class="n">request</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;authType&#39;</span><span class="p">:</span> <span class="s1">&#39;dfs_ephemeral&#39;</span><span class="p">},</span> <span class="n">timeout_sec</span><span class="o">=</span><span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/google/colab/_message.py</span> in <span class="ni">blocking_request</span><span class="nt">(request_type, request, timeout_sec, parent)</span>
+<span class="g g-Whitespace">    </span><span class="mi">175</span>       <span class="n">request_type</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="n">parent</span><span class="p">,</span> <span class="n">expect_reply</span><span class="o">=</span><span class="kc">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span>   <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">177</span>   <span class="k">return</span> <span class="n">read_reply_from_input</span><span class="p">(</span><span class="n">request_id</span><span class="p">,</span> <span class="n">timeout_sec</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/google/colab/_message.py</span> in <span class="ni">read_reply_from_input</span><span class="nt">(message_id, timeout_sec)</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span>     <span class="n">reply</span> <span class="o">=</span> <span class="n">_read_next_input_message</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span>     <span class="k">if</span> <span class="n">reply</span> <span class="o">==</span> <span class="n">_NOT_READY</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">reply</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">97</span>       <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.025</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span>       <span class="k">continue</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="k">if</span> <span class="p">(</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">Sastrawi</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
+Collecting Sastrawi
+  Downloading Sastrawi-1.0.1-py2.py3-none-any.whl (209 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">209.7/209.7 KB</span> <span class=" -Color -Color-Red">5.5 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hInstalling collected packages: Sastrawi
+Successfully installed Sastrawi-1.0.1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">CountVectorizer</span>
+<span class="kn">from</span> <span class="nn">sklearn.feature_extraction.text</span> <span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+<span class="kn">from</span> <span class="nn">Sastrawi.Stemmer.StemmerFactory</span> <span class="kn">import</span> <span class="n">StemmerFactory</span>
+<span class="kn">import</span> <span class="nn">re</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">REGEX</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\s&quot;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">tokenize</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">tok</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">tok</span> <span class="ow">in</span> <span class="n">REGEX</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">text</span><span class="p">)]</span>
+
+<span class="k">def</span> <span class="nf">stopwords</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+	<span class="n">reg</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;\n&quot;</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">reg</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;drive/MyDrive/Tugas3TKI2/source1.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">);</span>
+<span class="n">raw1</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;drive/MyDrive/Tugas3TKI2/source2.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">);</span>
+<span class="n">raw2</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;drive/MyDrive/Tugas3TKI2/source3.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">);</span>
+<span class="n">raw3</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;drive/MyDrive/Tugas3TKI2/source4.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">);</span>
+<span class="n">raw4</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;drive/MyDrive/Tugas3TKI2/source5.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">);</span>
+<span class="n">raw5</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># menghilangkan tanda baca</span>
+<span class="n">tandabaca</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;.&quot;</span><span class="p">,</span><span class="s2">&quot;,&quot;</span><span class="p">,</span><span class="s2">&quot;-&quot;</span><span class="p">,</span><span class="s2">&quot;%&quot;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">td</span> <span class="ow">in</span> <span class="n">tandabaca</span><span class="p">:</span>
+	<span class="n">raw1</span><span class="o">=</span><span class="n">raw1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">td</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+	<span class="n">raw2</span><span class="o">=</span><span class="n">raw2</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">td</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+	<span class="n">raw3</span><span class="o">=</span><span class="n">raw3</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">td</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+	<span class="n">raw4</span><span class="o">=</span><span class="n">raw4</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">td</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+	<span class="n">raw5</span><span class="o">=</span><span class="n">raw5</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">td</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># menghilangkan stop words</span>
+<span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;drive/MyDrive/Tugas3TKI/stopwords.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">);</span>
+<span class="n">st</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="n">stopwords</span> <span class="o">=</span> <span class="n">stopwords</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">stopwords</span><span class="p">:</span>
+	<span class="n">raw1</span><span class="o">=</span><span class="n">raw1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">word</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+	<span class="n">raw2</span><span class="o">=</span><span class="n">raw2</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">word</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+	<span class="n">raw3</span><span class="o">=</span><span class="n">raw3</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">word</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+	<span class="n">raw4</span><span class="o">=</span><span class="n">raw4</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">word</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+	<span class="n">raw5</span><span class="o">=</span><span class="n">raw5</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">+</span><span class="n">word</span><span class="o">+</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># stemming </span>
+<span class="n">factory</span> <span class="o">=</span> <span class="n">StemmerFactory</span><span class="p">()</span>
+<span class="n">stemmer</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="n">create_stemmer</span><span class="p">()</span>
+
+
+<span class="n">hasilstem1</span> <span class="o">=</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">raw1</span><span class="p">)</span>
+<span class="n">hasilstem2</span> <span class="o">=</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">raw2</span><span class="p">)</span>
+<span class="n">hasilstem3</span> <span class="o">=</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">raw3</span><span class="p">)</span>
+<span class="n">hasilstem4</span> <span class="o">=</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">raw4</span><span class="p">)</span>
+<span class="n">hasilstem5</span> <span class="o">=</span> <span class="n">stemmer</span><span class="o">.</span><span class="n">stem</span><span class="p">(</span><span class="n">raw5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#tokenization</span>
+<span class="n">train_set</span> <span class="o">=</span> <span class="p">[</span><span class="n">hasilstem1</span><span class="p">,</span><span class="n">hasilstem2</span><span class="p">,</span><span class="n">hasilstem3</span><span class="p">,</span><span class="n">hasilstem4</span><span class="p">,</span><span class="n">hasilstem5</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">count_vectorizer</span> <span class="o">=</span> <span class="n">CountVectorizer</span><span class="p">(</span><span class="n">tokenizer</span><span class="o">=</span><span class="n">tokenize</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">count_vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">train_set</span><span class="p">)</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+<span class="n">vocab</span> <span class="o">=</span> <span class="n">count_vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/usr/local/lib/python3.9/dist-packages/sklearn/feature_extraction/text.py:528: UserWarning: The parameter &#39;token_pattern&#39; will not be used since &#39;tokenizer&#39; is not None&#39;
+  warnings.warn(
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Jumlah Term FREQUENCY=============================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Term FREQUENCY=============================
+[[0 1 0 ... 3 0 0]
+ [0 1 0 ... 0 0 0]
+ [0 0 0 ... 1 0 4]
+ [0 1 1 ... 0 0 0]
+ [1 1 0 ... 0 1 0]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;VECTOR FITUR=============================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">vocab</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VECTOR FITUR=============================
+[&#39;2022&#39; &#39;2023&#39; &#39;21&#39; &#39;23&#39; &#39;230323&#39; &#39;25&#39; &#39;3&#39; &#39;7&#39; &#39;99&#39; &#39;acara&#39; &#39;acu&#39; &#39;ada&#39;
+ &#39;adapun&#39; &#39;agustus&#39; &#39;aisha&#39; &#39;ajar&#39; &#39;akselerasi&#39; &#39;akun&#39; &#39;alam&#39; &#39;alami&#39;
+ &#39;aldiano&#39; &#39;alfian&#39; &#39;alih&#39; &#39;and&#39; &#39;andi&#39; &#39;angkasa&#39; &#39;anjing&#39; &#39;anjur&#39; &#39;antar&#39;
+ &#39;anti&#39; &#39;antibodi&#39; &#39;apa&#39; &#39;api&#39; &#39;ardianto&#39; &#39;asn&#39; &#39;awat&#39; &#39;bagi&#39; &#39;bagus&#39;
+ &#39;bahagia&#39; &#39;baik&#39; &#39;bakar&#39; &#39;bal&#39; &#39;banding&#39; &#39;bantu&#39; &#39;barang&#39; &#39;bas&#39; &#39;batas&#39;
+ &#39;baterai&#39; &#39;bayar&#39; &#39;bbm&#39; &#39;beber&#39; &#39;beda&#39; &#39;beli&#39; &#39;belum&#39; &#39;benarbenar&#39;
+ &#39;beramahtamah&#39; &#39;berapa&#39; &#39;berita&#39; &#39;bernardi&#39; &#39;bersamasama&#39; &#39;biaya&#39;
+ &#39;bilang&#39; &#39;bising&#39; &#39;boleh&#39; &#39;bolehboleh&#39; &#39;buah&#39; &#39;buahbuahan&#39; &#39;buang&#39; &#39;buka&#39;
+ &#39;bukber&#39; &#39;busana&#39; &#39;cabut&#39; &#39;cegah&#39; &#39;cepat&#39; &#39;combustion&#39; &#39;contoh&#39; &#39;corona&#39;
+ &#39;covid19&#39; &#39;cuit&#39; &#39;curi&#39; &#39;daerah&#39; &#39;dalam&#39; &#39;dan&#39; &#39;dara&#39; &#39;data&#39; &#39;dengan&#39;
+ &#39;denpasar&#39; &#39;deret&#39; &#39;detikcom&#39; &#39;di&#39; &#39;dia&#39; &#39;direktur&#39; &#39;ditreskrimum&#39;
+ &#39;djumiril&#39; &#39;doctor&#39; &#39;dokter&#39; &#39;dorong&#39; &#39;dr&#39; &#39;dua&#39; &#39;efisien&#39; &#39;ekor&#39;
+ &#39;embelembel&#39; &#39;emisi&#39; &#39;empat&#39; &#39;end&#39; &#39;energi&#39; &#39;engine&#39; &#39;entertaimet&#39;
+ &#39;fajar&#39; &#39;fakultas&#39; &#39;februari&#39; &#39;fkm&#39; &#39;foto&#39; &#39;gagah&#39; &#39;ganti&#39; &#39;gas&#39; &#39;gaun&#39;
+ &#39;gejala&#39; &#39;gemerlap&#39; &#39;gencar&#39; &#39;gesits&#39; &#39;giat&#39; &#39;guna&#39; &#39;hadap&#39; &#39;hadir&#39; &#39;hal&#39;
+ &#39;harap&#39; &#39;harga&#39; &#39;hari&#39; &#39;haruni&#39; &#39;harus&#39; &#39;hasil&#39; &#39;hemat&#39; &#39;hewan&#39; &#39;hias&#39;
+ &#39;hidup&#39; &#39;hilang&#39; &#39;hitam&#39; &#39;ia&#39; &#39;ice&#39; &#39;ikan&#39; &#39;imunitas&#39; &#39;indonesia&#39;
+ &#39;industri&#39; &#39;ini&#39; &#39;instagram&#39; &#39;internal&#39; &#39;investigasi&#39; &#39;istri&#39; &#39;izin&#39;
+ &#39;jabat&#39; &#39;jadi&#39; &#39;jaga&#39; &#39;jahat&#39; &#39;jakarta&#39; &#39;jalin&#39; &#39;jangkit&#39; &#39;janji&#39; &#39;jas&#39;
+ &#39;jaya&#39; &#39;joko&#39; &#39;junior&#39; &#39;juta&#39; &#39;kalau&#39; &#39;kamis&#39; &#39;kasubdit&#39; &#39;kasus&#39; &#39;kau&#39;
+ &#39;kblbb&#39; &#39;keluar&#39; &#39;keluarga&#39; &#39;kemarin&#39; &#39;kembang&#39; &#39;kemeja&#39; &#39;kemenkes&#39;
+ &#39;kena&#39; &#39;kendara&#39; &#39;kerabat&#39; &#39;ketat&#39; &#39;kevin&#39; &#39;khawatir&#39; &#39;khomeini&#39; &#39;kita&#39;
+ &#39;kocek&#39; &#39;koko&#39; &#39;koko28&#39; &#39;kolom&#39; &#39;kompol&#39; &#39;komponen&#39; &#39;kondisi&#39;
+ &#39;konferensi&#39; &#39;konvensional&#39; &#39;korban&#39; &#39;kualitas&#39; &#39;kumpulkumpul&#39; &#39;kutip&#39;
+ &#39;lain&#39; &#39;laku&#39; &#39;lalu&#39; &#39;lamar&#39; &#39;langit&#39; &#39;langsung&#39; &#39;lantar&#39; &#39;lapor&#39;
+ &#39;larang&#39; &#39;latar&#39; &#39;lebih&#39; &#39;legalitas&#39; &#39;lengkap&#39; &#39;lingkung&#39; &#39;listrik&#39;
+ &#39;lokal&#39; &#39;lutut&#39; &#39;mahal&#39; &#39;makan&#39; &#39;malam&#39; &#39;mana&#39; &#39;manfaat&#39; &#39;manufaktur&#39;
+ &#39;marak&#39; &#39;maret&#39; &#39;masa&#39; &#39;masih&#39; &#39;masingmasing&#39; &#39;masker&#39; &#39;masyarakat&#39; &#39;me&#39;
+ &#39;media&#39; &#39;meni&#39; &#39;menteri&#39; &#39;menu&#39; &#39;merek&#39; &#39;mereka&#39; &#39;mesin&#39; &#39;meski&#39; &#39;metro&#39;
+ &#39;milik&#39; &#39;momen&#39; &#39;momentum&#39; &#39;motor&#39; &#39;mudah&#39; &#39;muhammad&#39; &#39;murah&#39; &#39;musibah&#39;
+ &#39;namun&#39; &#39;nasi&#39; &#39;network&#39; &#39;ngasih&#39; &#39;nggak&#39; &#39;nikah&#39; &#39;nila&#39; &#39;of&#39;
+ &#39;operasional&#39; &#39;orang&#39; &#39;orangorang&#39; &#39;otomotif&#39; &#39;outdoor&#39; &#39;pacar&#39; &#39;pakai&#39;
+ &#39;pamer&#39; &#39;pandemi&#39; &#39;paris&#39; &#39;pasal&#39; &#39;pasang&#39; &#39;pebulutangkis&#39; &#39;pelihara&#39;
+ &#39;pengantin&#39; &#39;perintah&#39; &#39;pers&#39; &#39;persen&#39; &#39;peser&#39; &#39;pilih&#39; &#39;pola&#39; &#39;polda&#39;
+ &#39;polisi&#39; &#39;ppkm&#39; &#39;prancis&#39; &#39;presiden&#39; &#39;proses&#39; &#39;protokol&#39; &#39;puasa&#39;
+ &#39;pungkas&#39; &#39;putih&#39; &#39;rabies&#39; &#39;rakyat&#39; &#39;ramah&#39; &#39;rangkul&#39; &#39;ranmor&#39; &#39;rekan&#39;
+ &#39;rendah&#39; &#39;resmi&#39; &#39;responsif&#39; &#39;ri&#39; &#39;rian&#39; &#39;riset&#39; &#39;roda&#39; &#39;rogoh&#39; &#39;rp&#39;
+ &#39;rumit&#39; &#39;saat&#39; &#39;sabtu&#39; &#39;sakit&#39; &#39;saksi&#39; &#39;salah&#39; &#39;sambung&#39; &#39;samping&#39; &#39;sang&#39;
+ &#39;sangkut&#39; &#39;sanjaya&#39; &#39;sapa&#39; &#39;saran&#39; &#39;satu&#39; &#39;sayur&#39; &#39;sebut&#39; &#39;sehat&#39;
+ &#39;selebritas&#39; &#39;semat&#39; &#39;sementara&#39; &#39;sempat&#39; &#39;senang&#39; &#39;seperti&#39; &#39;serasi&#39;
+ &#39;serosurvei&#39; &#39;setel&#39; &#39;sheila&#39; &#39;siapa&#39; &#39;silaturahmi&#39; &#39;situ&#39; &#39;sosial&#39;
+ &#39;spesialis&#39; &#39;stadion&#39; &#39;story&#39; &#39;suami&#39; &#39;suara&#39; &#39;subsidi&#39; &#39;suci&#39; &#39;sudah&#39;
+ &#39;suntik&#39; &#39;sweet&#39; &#39;tak&#39; &#39;takdir&#39; &#39;tampil&#39; &#39;tamu&#39; &#39;tanoesoedibjo&#39; &#39;tapi&#39;
+ &#39;tatap&#39; &#39;tekuk&#39; &#39;telur&#39; &#39;temu&#39; &#39;terang&#39; &#39;terap&#39; &#39;tetap&#39; &#39;the&#39; &#39;tidak&#39;
+ &#39;tiga&#39; &#39;time&#39; &#39;tindaklanjuti&#39; &#39;tkp&#39; &#39;torsi&#39; &#39;tubuh&#39; &#39;tuju&#39; &#39;tukas&#39;
+ &#39;tuksedo&#39; &#39;tulis&#39; &#39;tumbuh&#39; &#39;turut&#39; &#39;ucap&#39; &#39;ui&#39; &#39;unggah&#39; &#39;unggul&#39; &#39;unit&#39;
+ &#39;universitas&#39; &#39;until&#39; &#39;untung&#39; &#39;upaya&#39; &#39;utama&#39; &#39;vaksin&#39; &#39;vaksinasi&#39;
+ &#39;valencia&#39; &#39;via&#39; &#39;vidi&#39; &#39;virus&#39; &#39;walaupun&#39; &#39;warga&#39; &#39;warna&#39; &#39;widodo&#39;
+ &#39;wika&#39; &#39;ya&#39; &#39;you&#39; &#39;yuliansyah&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;JUMLAH VECTOR FITUR=============================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vocab</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>JUMLAH VECTOR FITUR=============================
+390
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tfidf</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">train_set</span><span class="p">)</span>
+<span class="n">pairwise_similarity</span> <span class="o">=</span> <span class="n">tfidf</span> <span class="o">*</span> <span class="n">tfidf</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Jumlah Term FREQUENCY-Inverse Document Frequency=============================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">tfidf</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Term FREQUENCY-Inverse Document Frequency=============================
+  (0, 279)	0.04491504769540274
+  (0, 325)	0.04491504769540274
+  (0, 133)	0.030080130906393384
+  (0, 270)	0.04491504769540274
+  (0, 13)	0.04491504769540274
+  (0, 324)	0.04491504769540274
+  (0, 153)	0.04491504769540274
+  (0, 316)	0.13474514308620822
+  (0, 142)	0.04491504769540274
+  (0, 169)	0.04491504769540274
+  (0, 176)	0.04491504769540274
+  (0, 342)	0.03623717767251356
+  (0, 230)	0.03623717767251356
+  (0, 213)	0.03623717767251356
+  (0, 3)	0.03623717767251356
+  (0, 162)	0.04491504769540274
+  (0, 161)	0.07247435534502712
+  (0, 254)	0.04491504769540274
+  (0, 80)	0.08983009539080548
+  (0, 35)	0.08983009539080548
+  (0, 25)	0.04491504769540274
+  (0, 349)	0.04491504769540274
+  (0, 115)	0.13474514308620822
+  (0, 17)	0.04491504769540274
+  (0, 252)	0.04491504769540274
+  :	:
+  (4, 88)	0.03787417908631801
+  (4, 143)	0.03787417908631801
+  (4, 366)	0.07574835817263602
+  (4, 276)	0.03787417908631801
+  (4, 309)	0.03143898995623984
+  (4, 301)	0.03143898995623984
+  (4, 9)	0.03787417908631801
+  (4, 199)	0.03787417908631801
+  (4, 133)	0.06287797991247968
+  (4, 230)	0.03787417908631801
+  (4, 213)	0.03787417908631801
+  (4, 3)	0.03787417908631801
+  (4, 122)	0.07574835817263602
+  (4, 173)	0.0943169698687195
+  (4, 87)	0.07574835817263602
+  (4, 1)	0.026447469478004512
+  (4, 136)	0.03787417908631801
+  (4, 212)	0.03787417908631801
+  (4, 235)	0.11362253725895403
+  (4, 140)	0.07574835817263602
+  (4, 311)	0.03787417908631801
+  (4, 223)	0.03143898995623984
+  (4, 49)	0.03787417908631801
+  (4, 152)	0.026447469478004512
+  (4, 55)	0.022369100289197856
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Jumlah COSINE-SIMILARITY=============================&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">pairwise_similarity</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah COSINE-SIMILARITY=============================
+  (0, 1)	0.049606635674658874
+  (0, 2)	0.032518514114530064
+  (0, 4)	0.056230467372605855
+  (0, 3)	0.029625807695633583
+  (0, 0)	0.9999999999999989
+  (1, 2)	0.0016383370139384085
+  (1, 4)	0.0031343163289590356
+  (1, 3)	0.002954003239845324
+  (1, 0)	0.049606635674658874
+  (1, 1)	0.9999999999999999
+  (2, 1)	0.0016383370139384085
+  (2, 0)	0.032518514114530064
+  (2, 4)	0.02591909205718982
+  (2, 3)	0.17858610180745066
+  (2, 2)	0.9999999999999997
+  (3, 1)	0.002954003239845324
+  (3, 0)	0.029625807695633583
+  (3, 2)	0.17858610180745066
+  (3, 4)	0.011673977599406173
+  (3, 3)	0.9999999999999996
+  (4, 1)	0.0031343163289590356
+  (4, 0)	0.056230467372605855
+  (4, 2)	0.02591909205718982
+  (4, 3)	0.011673977599406173
+  (4, 4)	0.9999999999999996
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>kesimpulan</strong> <strong>:</strong></p>
+<p>Cosine similarity adalah metode yang digunakan untuk mengukur seberapa mirip dua vektor atau dokumen dalam ruang vektor.
+menggunakan numpy dan scikit-learn untuk menghitung cosine similarity antara dua vektor dan antara beberapa dokumen. Kita menggunakan CountVectorizer dari scikit-learn untuk mengubah dokumen menjadi representasi vektor dan kemudian menghitung cosine similarity antara setiap pasangan dokumen menggunakan cosine_similarity dari scikit-learn.</p>
+<p>Cosine similarity biasanya digunakan dalam NLP untuk mengukur kesamaan antara dokumen, kata, atau frasa dalam ruang vektor. Semakin tinggi nilai cosine similarity, semakin mirip dokumen atau kata-kata tersebut.</p>
+<p>Melakukan uji coba cosinus similarity menggunakan Python, untuk menguji kemampuan dan keakuratan perhitungan cosinus similarity dalam membandingkan kedekatan antara dua atau lebih dokumen. Dengan melakukan uji coba, mahasiswa dapat memahami konsep dan cara kerja perhitungan cosinus similarity secara praktis, serta mengevaluasi performa dan akurasi dari implementasi yang dilakukan. dan memperkenalkan berbagai library pendukung yang dapat digunakan untuk mengimplementasikan metode temu kembali informasi, seperti Pandas, Scikit-learn, dan NLTK.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tugas1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">PERCOBAAN ARCHIVE 1 : BARU</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="TUGAS2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">TUGAS 2 PBA : TEXT PREPROCESSING NLP PYTHON</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">TUGAS 3: UJICOBA COSINUS SIMILARITY PYTHON</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cosinus-similatarity-dengan-python">Cosinus Similatarity dengan python</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 210411100002 - Mohammad Iqbal Surya Ramadhan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
