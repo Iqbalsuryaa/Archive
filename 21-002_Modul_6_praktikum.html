@@ -1,0 +1,978 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUGAS 6 : PRAKTIKUM ALGORITMA PEMROGRAMAN &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '21-002_Modul_6_praktikum';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="TUGAS UTS : ALGORITMA PEMROGRAMAN" href="UtsAlpro.html" />
+    <link rel="prev" title="TUGAS 5 : PRAKTIKUM ALGORITMA PEMROGRAMAN" href="21-002_Modul_5_praktikum.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/fotoku.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/fotoku.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tugas1.html">PERCOBAAN ARCHIVE 1 : BARU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TUGAS%20PRAKTIKUM%201.html">TUGAS 1 : PRAKTIKUM ALGORITMA PEMROGRAMAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TUGAS%20PRAKTIKUM%202.html">TUGAS 2 : PRAKTIKUM ALGORITMA PEMROGRAMAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21-002_Modul_4_praktikum.html">TUGAS 4 : PRAKTIKUM ALGORITMA PEMROGRAMAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21-002_Modul_5_praktikum.html">TUGAS 5 : PRAKTIKUM ALGORITMA PEMROGRAMAN</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">TUGAS 6 : PRAKTIKUM ALGORITMA PEMROGRAMAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UtsAlpro.html">TUGAS UTS : ALGORITMA PEMROGRAMAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="210411100002_Modul_1_%E2%80%93_Review_Algoritma_Pemrograman.html">PRAKTIKUM STRUKTUR DATA : MODUL 1 - REVIEW ALGORITMA PEMROGRAMAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="210411100002_Modul_2.html">PRAKTIKUM STRUKTUR DATA : MODUL 2 - Stack &amp; Queue</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="210411100002_Modul3.html">PRAKTIKUM STRUKTUR DATA : Modul 3 – Linked List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="210411100002_Modul4_Sorting.html">PRAKTIKUM STRUKTUR DATA : Modul 4 – Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BubbleSort.html">STRUKTUR DATA - Bubble Sort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BubbleSort_And_SelectionSort.html">STRUKTUR DATA - Bubblesort dan SelectionSort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_002_UTS_SD.html">UTS STRUKTUR DATA 2C - 2023</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="TUGAS2.html">TUGAS 2 PBA : TEXT PREPROCESSING NLP PYTHON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PBA-TUGAS3.html">TUGAS UTS PBA : UTS PROJECT SEDERHANA NLP PYTHON</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F21-002_Modul_6_praktikum.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/21-002_Modul_6_praktikum.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>TUGAS 6 : PRAKTIKUM ALGORITMA PEMROGRAMAN</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="tugas-6-praktikum-algoritma-pemrograman">
+<h1>TUGAS 6 : PRAKTIKUM ALGORITMA PEMROGRAMAN<a class="headerlink" href="#tugas-6-praktikum-algoritma-pemrograman" title="Permalink to this heading">#</a></h1>
+<p>NAMA : MOHAMMAD IQBAL SURYA RAMADHAN</p>
+<p>NIM  : 210411100002</p>
+<p>Algoritma dan pemrograman dasar</p>
+<ol class="arabic simple">
+<li><p>(Menampilkan piramida)</p></li>
+</ol>
+<p>Tuliskan suatu program yang meminta pengguna memasukkan suatu bilangan bulat
+(integer) dari 1 sampai 15 dan tampilkan suatu piramida, sebagaimana diperlihatkan
+pada contoh eksekusi di bawah ini:</p>
+<p>Masukkan jumlah baris: 7</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Masukkan jumlah baris: &#39;</span><span class="p">))</span>  
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>     
+    <span class="n">spaces</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">))</span>     
+    <span class="nb">print</span><span class="p">(</span><span class="n">spaces</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+          
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>         
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%2d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">j</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">i</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">):</span>         
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%2d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">j</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+             
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">StdinNotImplementedError</span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-1-062f9fb51aa7&gt;</span> in <span class="ni">&lt;cell line: 1&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Masukkan jumlah baris: &#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="n">spaces</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="nb">print</span><span class="p">(</span><span class="n">spaces</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">846</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">847</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">--&gt; </span><span class="mi">848</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">    </span><span class="mi">849</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">850</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p>(Menampilkan bilangan dalam pola piramida)
+Tuliskan suatu perulangan for bersarang yang menampilkan output berikut:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">space</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%5c</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>    
+    <span class="n">val</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%5d</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">val</span><span class="p">)),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+        <span class="n">val</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">val1</span> <span class="o">=</span> <span class="n">row</span> <span class="o">-</span> <span class="mi">1</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">row</span><span class="p">):</span>
+        <span class="n">val1</span> <span class="o">-=</span> <span class="mi">1</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">%5d</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">val1</span><span class="p">)),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                                
+                                              1 
+                                        1     2     1 
+                                  1     2     4     2     1 
+                            1     2     4     8     4     2     1 
+                      1     2     4     8    16     8     4     2     1 
+                1     2     4     8    16    32    16     8     4     2     1 
+          1     2     4     8    16    32    64    32    16     8     4     2     1 
+    1     2     4     8    16    32    64   128    64    32    16     8     4     2     1 
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>(Menampilkan bilangan prima antara 2 dan 1,000) Perhatikan kode
+berikut:</p></li>
+</ol>
+<p>Lakukan perubahan terhadap kode program di atas untuk menampilkan bilangan
+prima antara 2 dan 1,000 secara inklusif. Tampilkan delapan bilangan prima per baris.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">NUMBER_OF_PRIMES</span> <span class="o">=</span> <span class="mi">1000</span> <span class="c1"># Number of primes to display</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># Count the number of prime numbers</span>
+<span class="n">number</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1000 bilangan prima pertama : &quot;</span><span class="p">)</span>
+<span class="c1"># Repeatedly find prime numbers</span>
+<span class="k">while</span> <span class="n">number</span> <span class="o">&lt;=</span> <span class="n">NUMBER_OF_PRIMES</span><span class="p">:</span>
+  <span class="n">isprime</span><span class="o">=</span><span class="kc">True</span>
+  <span class="n">divisor</span><span class="o">=</span><span class="mi">2</span>
+  
+  <span class="k">while</span> <span class="n">divisor</span> <span class="o">&lt;</span> <span class="n">number</span><span class="p">:</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">%</span> <span class="n">divisor</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span>
+      <span class="n">isprime</span><span class="o">=</span><span class="kc">False</span>
+      <span class="k">break</span>
+    <span class="n">divisor</span><span class="o">+=</span><span class="mi">1</span>
+  
+  <span class="k">if</span> <span class="p">(</span><span class="n">isprime</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">format</span><span class="p">(</span><span class="n">number</span><span class="p">,</span><span class="s2">&quot;5d&quot;</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="n">count</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="k">if</span> <span class="n">count</span><span class="o">%</span><span class="k">8</span>==0:
+      <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+  <span class="n">number</span><span class="o">+=</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1000 bilangan prima pertama : 
+    2    3    5    7   11   13   17   19
+
+   23   29   31   37   41   43   47   53
+
+   59   61   67   71   73   79   83   89
+
+   97  101  103  107  109  113  127  131
+
+  137  139  149  151  157  163  167  173
+
+  179  181  191  193  197  199  211  223
+
+  227  229  233  239  241  251  257  263
+
+  269  271  277  281  283  293  307  311
+
+  313  317  331  337  347  349  353  359
+
+  367  373  379  383  389  397  401  409
+
+  419  421  431  433  439  443  449  457
+
+  461  463  467  479  487  491  499  503
+
+  509  521  523  541  547  557  563  569
+
+  571  577  587  593  599  601  607  613
+
+  617  619  631  641  643  647  653  659
+
+  661  673  677  683  691  701  709  719
+
+  727  733  739  743  751  757  761  769
+
+  773  787  797  809  811  821  823  827
+
+  829  839  853  857  859  863  877  881
+
+  883  887  907  911  919  929  937  941
+
+  947  953  967  971  977  983  991  997
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>(Menampilkan tahun kabisat)
+Tuliskan suatu program yang menampilkan, sepuluh per baris, semua tahun kabisat
+dalam abad ke-21 (dari tahun 2001 sampai 2100). Tahun-tahun tersebut dipisahkan
+oleh tepat satu spasi.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">year</span><span class="o">=</span><span class="mi">2001</span>
+<span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">count1</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">while</span> <span class="n">year</span><span class="o">&lt;=</span><span class="mi">2100</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">year</span><span class="o">%</span><span class="k">4</span>==0 and year%100!=0 or year%400==0:
+        <span class="nb">print</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+        <span class="n">count</span><span class="o">=</span><span class="n">count</span><span class="o">+</span><span class="mi">1</span>
+        <span class="n">count1</span><span class="o">=</span><span class="n">count1</span><span class="o">+</span><span class="mi">1</span>
+        
+        <span class="k">if</span> <span class="n">count</span><span class="o">==</span><span class="mi">10</span><span class="p">:</span>
+            <span class="n">count</span><span class="o">=</span><span class="mi">0</span>
+            <span class="nb">print</span> <span class="p">()</span>
+    <span class="n">year</span><span class="o">=</span><span class="n">year</span><span class="o">+</span><span class="mi">1</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">total number of leap year : &quot;</span><span class="p">,</span> <span class="n">count1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2004 2008 2012 2016 2020 2024 2028 2032 2036 2040 
+2044 2048 2052 2056 2060 2064 2068 2072 2076 2080 
+2084 2088 2092 2096 
+total number of leap year :  24
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>(Jumlah kemunculan bilangan terbesar)
+Tuliskan suatu program yang membaca beberapa integer, mencari nilai terbesar, dan
+menghitung jumlah kemunculannya. Anggaplah bahwa input berakhir dengan angka</p></li>
+<li><p>Katakanlah anda memasukkan 3 5 2 5 5 5 0; maka program menemukan bahwa
+bilangan terbesar adalah 5 dan jumlah kemunculan untuk 5 adalah 4.
+(Hint: Gunakan dua variabel, max dan count. Variabel max menyimpan angka
+terbesar terkini, dan count menyimpan jumlah kemunculannya. Pada awalnya,
+berikan angka pertama ke max dan 1 untuk count. Bandingkan setiap angka
+berikutnya dengan max. Jika angka ini lebih besar daripada max, maka berikan angka
+it uke max dan reset count ke 1 lagi. Jika bilangan ini sama dengan max, naikkan count
+sebesar 1.)</p></li>
+</ol>
+<p>Masukkan angka (0: untuk mengakhiri): 3
+Masukkan angka (0: untuk mengakhiri): 5
+Masukkan angka (0: untuk mengakhiri): 2
+Masukkan angka (0: untuk mengakhiri): 5
+Masukkan angka (0: untuk mengakhiri): 5
+Masukkan angka (0: untuk mengakhiri): 5
+Masukkan angka (0: untuk mengakhiri): 0
+Angka terbesar adalah 5 dengan kemunculan sebanyak 4 kali.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan angka (0: untuk mengakhiri): &quot;</span><span class="p">))</span> 
+<span class="n">largest</span> <span class="o">=</span> <span class="n">n</span> 
+<span class="n">count</span> <span class="o">=</span> <span class="mi">1</span> 
+<span class="k">while</span><span class="p">(</span><span class="n">n</span><span class="o">!=</span><span class="mi">0</span><span class="p">):</span>     
+    <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Masukkan angka (0: untuk mengakhiri): &quot;</span><span class="p">))</span>     
+    <span class="k">if</span><span class="p">(</span><span class="n">largest</span> <span class="o">==</span> <span class="n">n</span><span class="p">):</span>         
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>     
+    <span class="k">elif</span><span class="p">(</span><span class="n">largest</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">):</span>         
+        <span class="n">largest</span> <span class="o">=</span> <span class="n">n</span>         
+        <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span> 
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Angka terbesar adalah&quot;</span><span class="p">,</span><span class="n">largest</span><span class="p">,</span><span class="s1">&#39;dengan kemunculan sebanyak&#39;</span><span class="p">,</span><span class="n">count</span><span class="p">,</span><span class="s1">&#39;kali&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Angka terbesar adalah 5 dengan kemunculan sebanyak 4 kali
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
+<li><p>(Aplikasi keuangan: menghitung nilai investasi masa depan)
+Tuliskan suatu fungsi yang menghitung nilai investasi masa depan pada tingkat bunga
+tertentu selama jumlah tahun tertentu. Investasi masa depan ditentukan
+menggunakan formula:
+futureInvestmentValue = investmentAmount * (1 +
+monthlyInterestRate)</p></li>
+</ol>
+<p>numberOfMonthsGunakan header fungsi berikut:</p>
+<p>def futureInvestmentValue(investmentAmount, monthlyInterestRate, years):
+Sebagai contoh, futureInvestmentValue(10000, 0.05/12, 5) mengembalikan 12833.59.
+Buatlah suatu program test yang meminta pengguna memasukkan jumlah investasi
+(investment amount) dan tingkat bunga tahunan (annual interest rate) dalam persen
+dan mencetak tabel yang menampilkan nilai masa depan untuk tahun 1 s.d 30.
+Berikut ini adalah contoh hasil eksekusinya:</p>
+<p>Jumlah yang diinvestasikan: 1000
+Tingkat Bunga Tahunan: 9
+Tahun Nilai Masa Depan
+1 1093.80
+2 1196.41
+…
+29 13467.25
+30 14730.57</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">futureInvestmentValue</span><span class="p">(</span><span class="n">investmentAmount</span><span class="p">,</span> <span class="n">monthlyInterestRate</span><span class="p">,</span> <span class="n">years</span><span class="p">):</span>     
+    <span class="k">return</span> <span class="n">investmentAmount</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">monthlyInterestRate</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">years</span><span class="o">*</span><span class="mi">12</span><span class="p">)</span>   
+    
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>     
+    <span class="n">amount</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Jumlah yang diinvestasikan: &#39;</span><span class="p">))</span>     
+    <span class="n">interest</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Tingkat Bunga Tahunan: &#39;</span><span class="p">))</span>      
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Tahun</span><span class="se">\t</span><span class="s1">Nilai Masa Depan&#39;</span><span class="p">)</span>     
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">31</span><span class="p">):</span>         
+        <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">%.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">futureInvestmentValue</span><span class="p">(</span><span class="n">amount</span><span class="p">,</span> <span class="n">interest</span><span class="o">/</span><span class="mi">1200</span><span class="p">,</span> <span class="n">i</span><span class="p">))</span>        
+<span class="n">main</span><span class="p">()</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tahun	Nilai Masa Depan
+1	1093.81
+2	1196.41
+3	1308.65
+4	1431.41
+5	1565.68
+6	1712.55
+7	1873.20
+8	2048.92
+9	2241.12
+10	2451.36
+11	2681.31
+12	2932.84
+13	3207.96
+14	3508.89
+15	3838.04
+16	4198.08
+17	4591.89
+18	5022.64
+19	5493.80
+20	6009.15
+21	6572.85
+22	7189.43
+23	7863.85
+24	8601.53
+25	9408.41
+26	10290.99
+27	11256.35
+28	12312.28
+29	13467.25
+30	14730.58
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="7">
+<li><p>(Konversi antara kaki dan meter)
+Buatlah suatu modul yang mengandung dua fungsi berikut:</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">foot</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">meter</span> <span class="o">=</span> <span class="mi">20</span>
+
+<span class="k">def</span> <span class="nf">footToMeter</span><span class="p">(</span><span class="n">foot</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">foot</span> <span class="o">*</span><span class="mf">0.305</span>
+
+<span class="k">def</span> <span class="nf">meterToFoot</span><span class="p">(</span><span class="n">meter</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">round</span><span class="p">((</span><span class="n">meter</span><span class="o">/</span><span class="mf">0.305</span><span class="p">),</span><span class="mi">3</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Kaki</span><span class="se">\t</span><span class="s1">Meter</span><span class="se">\t</span><span class="s1">|</span><span class="se">\t</span><span class="s1">Meter</span><span class="se">\t</span><span class="s1">Kaki&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">foot</span><span class="p">,</span><span class="n">meter</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">6</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="se">\t</span><span class="si">%s</span><span class="se">\t</span><span class="s1">|</span><span class="se">\t</span><span class="si">%s</span><span class="se">\t</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">foot</span><span class="p">,</span> <span class="n">footToMeter</span><span class="p">(</span><span class="n">foot</span><span class="p">),</span> <span class="n">meter</span><span class="p">,</span> <span class="n">meterToFoot</span><span class="p">(</span><span class="n">meter</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Kaki	Meter	|	Meter	Kaki
+1	0.305	|	20	65.574
+2	0.61	|	26	85.246
+3	0.915	|	32	104.918
+4	1.22	|	38	124.59
+5	1.525	|	44	144.262
+6	1.83	|	50	163.934
+7	2.135	|	56	183.607
+8	2.44	|	62	203.279
+9	2.745	|	68	222.951
+10	3.05	|	74	242.623
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>(Aplikasi keuangan: menghitung komisi)
+Buatlah suatu fungsi yang daoat menghitung komisi penjualan menggunakan skema
+pada Masalah 9. Header dari fungsi ini adalah</p></li>
+</ol>
+<p>def computeCommission(salesAmount):</p>
+<p>Tulislah suatu program test yang menampilkan tabel berikut:
+Jumlah Penjualan Komisi</p>
+<p>10000            900.0
+15000            1500.0
+95000            11100.0
+100000           11700.0</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#returns the commisson based on the amount</span>
+
+<span class="k">def</span> <span class="nf">computeCommission</span><span class="p">(</span><span class="n">salesAmount</span><span class="p">):</span>
+
+    <span class="k">if</span><span class="p">(</span><span class="n">salesAmount</span><span class="o">&lt;=</span><span class="mi">5500</span><span class="p">):</span>
+
+        <span class="k">return</span> <span class="n">salesAmount</span><span class="o">*</span><span class="mf">0.08</span>
+
+
+    <span class="k">return</span> <span class="mi">1500</span><span class="o">+</span><span class="p">(</span><span class="n">salesAmount</span><span class="o">-</span><span class="mi">15000</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.12</span>
+
+<span class="c1">#looping thorugh 11000 to 76000</span>
+
+<span class="n">penjualan</span><span class="o">=</span><span class="mi">10000</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jumlah Penjualan Komisi&#39;</span><span class="p">)</span>
+<span class="k">while</span><span class="p">(</span><span class="n">penjualan</span><span class="o">&lt;=</span><span class="mi">100000</span><span class="p">):</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%s</span><span class="s1"> </span><span class="se">\t\t</span><span class="s1"> </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">penjualan</span><span class="p">,</span><span class="n">computeCommission</span><span class="p">(</span><span class="n">penjualan</span><span class="p">)))</span>
+
+    <span class="n">penjualan</span><span class="o">=</span><span class="n">penjualan</span><span class="o">+</span><span class="mi">5000</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah Penjualan Komisi
+10000 		 900.0
+15000 		 1500.0
+20000 		 2100.0
+25000 		 2700.0
+30000 		 3300.0
+35000 		 3900.0
+40000 		 4500.0
+45000 		 5100.0
+50000 		 5700.0
+55000 		 6300.0
+60000 		 6900.0
+65000 		 7500.0
+70000 		 8100.0
+75000 		 8700.0
+80000 		 9300.0
+85000 		 9900.0
+90000 		 10500.0
+95000 		 11100.0
+100000 		 11700.0
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="9">
+<li><p>(Estimasi )
+Estimasi dapat dihitung menggunakan rumus deret berikut:</p></li>
+</ol>
+<p>Tulislah suatu fungsi yang mengembalikan m(i) dari nilai i tertentu dan buatlah suatu
+program test yang menampilkan tabel berikut:
+i m(i)
+1 4.0000
+101 3.1515
+201 3.1466
+301 3.1449
+401 3.1441
+501 3.1436
+601 3.1433
+701 3.1430
+801 3.1428
+901 3.1427</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calPi</span><span class="p">(</span><span class="n">i</span><span class="p">):</span> 
+    <span class="n">mi</span> <span class="o">=</span> <span class="mi">0</span> 
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">mi</span> <span class="o">+=</span> <span class="mi">4</span><span class="o">*</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> 
+    <span class="k">return</span> <span class="n">mi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;i</span><span class="se">\t</span><span class="s1">m(i)&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">mi</span> <span class="o">=</span> <span class="n">calPi</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:d}</span><span class="se">\t</span><span class="si">{1:.4f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">mi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i	m(i)
+1	4.0000
+101	3.1515
+201	3.1466
+301	3.1449
+401	3.1441
+501	3.1436
+601	3.1433
+701	3.1430
+801	3.1428
+901	3.1427
+</pre></div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>(Geometri: menampilkan sudut)</p></li>
+</ol>
+<p>Ubahlah code <a class="reference external" href="http://ComputeDistance.py">ComputeDistance.py</a>, menjadi fungsi untuk menghitung jarak antara
+dua titik.</p>
+<p>contoh inputan : 3,4 dan 6,8</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">x1</span><span class="p">,</span><span class="n">y1</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;masukkan x1 dan y1 dari titik 1: &#39;</span><span class="p">))</span>
+<span class="n">x2</span><span class="p">,</span><span class="n">y2</span> <span class="o">=</span> <span class="nb">eval</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;masukkan x2 dan y2 dari titik 2: &#39;</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">calculate</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">):</span>
+    <span class="n">dist</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">x2</span> <span class="o">-</span> <span class="n">x1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">y2</span> <span class="o">-</span> <span class="n">y1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">dist</span> 
+<span class="nb">print</span><span class="p">(</span><span class="n">calculate</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">y2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="21-002_Modul_5_praktikum.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">TUGAS 5 : PRAKTIKUM ALGORITMA PEMROGRAMAN</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="UtsAlpro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">TUGAS UTS : ALGORITMA PEMROGRAMAN</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 210411100002 - Mohammad Iqbal Surya Ramadhan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

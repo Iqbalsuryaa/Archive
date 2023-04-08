@@ -1,0 +1,1071 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUGAS UTS : ALGORITMA PEMROGRAMAN &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'UtsAlpro';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="PRAKTIKUM STRUKTUR DATA : MODUL 1 - REVIEW ALGORITMA PEMROGRAMAN" href="210411100002_Modul_1_%E2%80%93_Review_Algoritma_Pemrograman.html" />
+    <link rel="prev" title="TUGAS 6 : PRAKTIKUM ALGORITMA PEMROGRAMAN" href="21-002_Modul_6_praktikum.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/fotoku.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/fotoku.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Welcome to your Jupyter Book
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tugas1.html">PERCOBAAN ARCHIVE 1 : BARU</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TUGAS%20PRAKTIKUM%201.html">TUGAS 1 : PRAKTIKUM ALGORITMA PEMROGRAMAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TUGAS%20PRAKTIKUM%202.html">TUGAS 2 : PRAKTIKUM ALGORITMA PEMROGRAMAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21-002_Modul_4_praktikum.html">TUGAS 4 : PRAKTIKUM ALGORITMA PEMROGRAMAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21-002_Modul_5_praktikum.html">TUGAS 5 : PRAKTIKUM ALGORITMA PEMROGRAMAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21-002_Modul_6_praktikum.html">TUGAS 6 : PRAKTIKUM ALGORITMA PEMROGRAMAN</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">TUGAS UTS : ALGORITMA PEMROGRAMAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="210411100002_Modul_1_%E2%80%93_Review_Algoritma_Pemrograman.html">PRAKTIKUM STRUKTUR DATA : MODUL 1 - REVIEW ALGORITMA PEMROGRAMAN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="210411100002_Modul_2.html">PRAKTIKUM STRUKTUR DATA : MODUL 2 - Stack &amp; Queue</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="210411100002_Modul3.html">PRAKTIKUM STRUKTUR DATA : Modul 3 – Linked List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="210411100002_Modul4_Sorting.html">PRAKTIKUM STRUKTUR DATA : Modul 4 – Sorting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BubbleSort.html">STRUKTUR DATA - Bubble Sort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BubbleSort_And_SelectionSort.html">STRUKTUR DATA - Bubblesort dan SelectionSort</a></li>
+<li class="toctree-l1"><a class="reference internal" href="21_002_UTS_SD.html">UTS STRUKTUR DATA 2C - 2023</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="TUGAS2.html">TUGAS 2 PBA : TEXT PREPROCESSING NLP PYTHON</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PBA-TUGAS3.html">TUGAS UTS PBA : UTS PROJECT SEDERHANA NLP PYTHON</a></li>
+
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FUtsAlpro.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/UtsAlpro.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>TUGAS UTS : ALGORITMA PEMROGRAMAN</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="tugas-uts-algoritma-pemrograman">
+<h1>TUGAS UTS : ALGORITMA PEMROGRAMAN<a class="headerlink" href="#tugas-uts-algoritma-pemrograman" title="Permalink to this heading">#</a></h1>
+<p>NAMA : MOHAMMAD IQBAL SURYA RAMADHAN</p>
+<p>NIM  : 210411100002</p>
+<p>MATA KULIAH : ALGORITMA DAN PEMROGRAMAN DASAR</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#1.1</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;angka (n) yang dimasukkan =&#39;</span><span class="p">,))</span>
+<span class="n">JumlahSebelum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">JumlahSebelum</span> <span class="o">=</span> <span class="n">n</span><span class="o">*</span><span class="n">i</span> <span class="o">+</span> <span class="n">JumlahSebelum</span> 
+    <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">JumlahSebelum</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="mi">10</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">n</span><span class="si">}{</span><span class="n">n</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">n</span><span class="si">}{</span><span class="n">n</span><span class="si">}{</span><span class="n">n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hasil dari penjumlahan tersebut adalah&#39;</span><span class="p">,</span><span class="n">total</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="ne">StdinNotImplementedError</span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-1-9db16c0b3fc6&gt;</span> in <span class="ni">&lt;cell line: 3&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#1.1</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;angka (n) yang dimasukkan =&#39;</span><span class="p">,))</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">JumlahSebelum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="nn">/usr/local/lib/python3.9/dist-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">    </span><span class="mi">846</span>         <span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">847</span><span class="s2">         if not self._allow_stdin:</span>
+<span class="ne">--&gt; </span><span class="mi">848</span><span class="s2">             raise StdinNotImplementedError(</span>
+<span class="g g-Whitespace">    </span><span class="mi">849</span><span class="s2">                 &quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">850</span><span class="s2">             )</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## intializing n and m</span>
+<span class="n">n</span><span class="p">,</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span>
+<span class="c1">## initializing change variable to n</span>
+<span class="n">change</span> <span class="o">=</span> <span class="n">n</span>
+<span class="c1">## initializing sum to 0</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">## loop</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">):</span>
+   <span class="c1">## adding change to s</span>
+   <span class="n">s</span> <span class="o">+=</span> <span class="n">change</span>
+   <span class="c1">## updating the value of change</span>
+   <span class="n">change</span> <span class="o">=</span> <span class="n">change</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">+</span> <span class="n">n</span>
+<span class="c1">## printing the s</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3702
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#2</span>
+<span class="n">listangka</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">angkasama</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+    <span class="n">listangka</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;deretan angka = &#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">listangka</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">9</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">listangka</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">listangka</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">angkasama</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+<span class="k">if</span> <span class="n">angkasama</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">angkasama</span><span class="p">,</span><span class="s1">&#39;ada angka yang sama&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">angkasama</span><span class="p">,</span><span class="s1">&#39;ada angka yang berbeda&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1&#39;, &#39;2&#39;, &#39;1&#39;, &#39;2&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]
+6 ada angka yang sama
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3. Tulislah suatu program Python untuk menghitung hari antara dua tanggal.</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tanggal 1(2014,7,2)&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tanggal 2(2014,7,11)&#39;</span><span class="p">)</span>
+
+<span class="n">tanggal1</span><span class="o">=</span><span class="mi">11</span>
+<span class="n">tanggal2</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">totaltanggal</span><span class="o">=</span><span class="n">tanggal1</span><span class="o">-</span><span class="n">tanggal2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Selisih dari dua tanggal tersebut adalah&#39;</span><span class="p">,</span><span class="n">totaltanggal</span><span class="p">,</span><span class="s1">&#39;hari&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tanggal 1(2014,7,2)
+Tanggal 2(2014,7,11)
+Selisih dari dua tanggal tersebut adalah 9 hari
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#3. Tulislah suatu program Python untuk menghitung hari antara dua tanggal. </span>
+<span class="c1">#Contoh tanggal: (2014, 7, 2), (2014, 7, 11) </span>
+<span class="c1">#Output yang diharapkan: 9 hari</span>
+
+<span class="n">selisih</span> <span class="o">=</span> <span class="mi">365</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2014</span> <span class="o">-</span> <span class="mi">2014</span><span class="p">)</span> <span class="o">+</span> <span class="mi">30</span> <span class="o">*</span> <span class="p">(</span><span class="mi">7</span> <span class="o">-</span> <span class="mi">7</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">11</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="c1">#=dgn 12 bulan/setahun</span>
+<span class="nb">print</span><span class="p">((</span><span class="n">selisih</span><span class="p">),</span> <span class="s2">&quot;Hari&quot;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#3. Tulislah suatu program Python untuk menghitung hari antara dua tanggal. </span>
+<span class="c1">#Contoh tanggal: (2014, 7, 2), (2014, 7, 11) </span>
+<span class="c1">#Output yang diharapkan: 9 hari</span>
+
+<span class="n">jmlhridlm2tgl</span><span class="o">=</span> <span class="mi">365</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2014</span> <span class="o">-</span> <span class="mi">2014</span><span class="p">)</span> <span class="o">+</span> <span class="mi">30</span> <span class="o">*</span> <span class="p">(</span><span class="mi">7</span> <span class="o">-</span> <span class="mi">7</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">11</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">jmlhridlm2tgl</span><span class="p">),</span> <span class="s2">&quot;Hari&quot;</span><span class="p">)</span> <span class="c1">#abs == absolute berfungsi untuk menghilangkan hasil negatif</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#4</span>
+<span class="n">kata</span> <span class="o">=</span> <span class="s1">&#39;mereka binatang&#39;</span>
+<span class="n">kata</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">kata</span><span class="p">)</span>
+<span class="n">kataTukar</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="n">kata</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">kata</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">kata</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">kata</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">kata</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">kata</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">kata</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">kata</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">kata</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">kata</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">kata</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">kata</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kata</span><span class="p">)):</span>
+    <span class="n">kataTukar</span> <span class="o">+=</span> <span class="n">kata</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">kataTukar</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ngreka binatame
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">swap</span><span class="p">(</span><span class="n">string</span><span class="p">):</span>
+	
+	<span class="c1"># storing the first character</span>
+	<span class="n">start</span> <span class="o">=</span> <span class="n">string</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	
+	<span class="c1"># storing the last character</span>
+	<span class="n">end</span> <span class="o">=</span> <span class="n">string</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+	
+	<span class="n">swapped_string</span> <span class="o">=</span> <span class="n">end</span> <span class="o">+</span> <span class="n">string</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">start</span>
+	<span class="nb">print</span><span class="p">(</span><span class="n">swapped_string</span><span class="p">)</span>
+	
+<span class="c1"># Driver Code</span>
+<span class="n">swap</span><span class="p">(</span><span class="s2">&quot;iqbal surya&quot;</span><span class="p">)</span>
+<span class="n">swap</span><span class="p">(</span><span class="s2">&quot;Python&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>aqbal suryi
+nythoP
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#5</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">15</span> 
+<span class="n">y</span> <span class="o">=</span> <span class="mi">38</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x = &#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y = &#39;</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">y</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+    <span class="n">carry</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&amp;</span> <span class="n">y</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">^</span> <span class="n">y</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">carry</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>
+<span class="n">hasil</span> <span class="o">=</span> <span class="n">x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x =  15
+y =  38
+53
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add_without_plus_operator</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="k">while</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&amp;</span> <span class="n">b</span>
+        <span class="n">a</span> <span class="o">=</span> <span class="n">a</span> <span class="o">^</span> <span class="n">b</span>
+        <span class="n">b</span> <span class="o">=</span> <span class="n">data</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>
+    <span class="k">return</span> <span class="n">a</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">add_without_plus_operator</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">add_without_plus_operator</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">add_without_plus_operator</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+-10
+-30
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># without using arithmetic operator</span>
+<span class="k">def</span> <span class="nf">Add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+
+	<span class="c1"># Iterate till there is no carry</span>
+	<span class="k">while</span> <span class="p">(</span><span class="n">y</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">):</span>
+	
+		<span class="c1"># carry now contains common</span>
+		<span class="c1"># set bits of x and y</span>
+		<span class="n">carry</span> <span class="o">=</span> <span class="n">x</span> <span class="o">&amp;</span> <span class="n">y</span>
+
+		<span class="c1"># Sum of bits of x and y where at</span>
+		<span class="c1"># least one of the bits is not set</span>
+		<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">^</span> <span class="n">y</span>
+
+		<span class="c1"># Carry is shifted by one so that</span>
+		<span class="c1"># adding it to x gives the required sum</span>
+		<span class="n">y</span> <span class="o">=</span> <span class="n">carry</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span>
+	
+	<span class="k">return</span> <span class="n">x</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">Add</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">32</span><span class="p">))</span>
+
+<span class="c1"># This code is contributed by</span>
+<span class="c1"># Smitha Dinesh Semwal</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Python3 program to swap elements</span>
+<span class="c1"># at given positions</span>
+
+<span class="c1"># Swap function</span>
+<span class="k">def</span> <span class="nf">swapPositions</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span><span class="p">):</span>
+	
+	<span class="nb">list</span><span class="p">[</span><span class="n">pos1</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">pos2</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">[</span><span class="n">pos2</span><span class="p">],</span> <span class="nb">list</span><span class="p">[</span><span class="n">pos1</span><span class="p">]</span>
+	<span class="k">return</span> <span class="nb">list</span>
+
+<span class="c1"># Driver function</span>
+<span class="n">List</span> <span class="o">=</span> <span class="p">[</span><span class="mi">23</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">90</span><span class="p">]</span>
+<span class="n">pos1</span><span class="p">,</span> <span class="n">pos2</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">swapPositions</span><span class="p">(</span><span class="n">List</span><span class="p">,</span> <span class="n">pos1</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">pos2</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[19, 65, 23, 90]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#5 menjumlahkan dua bilangan bulat positif menggunakan operasi bitwise or</span>
+<span class="n">num1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot; masukan bilangan positif pertama : &quot;</span><span class="p">))</span>
+<span class="n">num2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot; masukan bilangan positif kedua : &quot;</span><span class="p">))</span>
+<span class="n">num3</span> <span class="o">=</span> <span class="n">num1</span><span class="o">|</span><span class="n">num2</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bilangan positif pertama = &quot;</span><span class="p">,</span> <span class="n">num1</span><span class="p">,</span><span class="s2">&quot;,binary = &quot;</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span> <span class="s2">&quot;08b&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;bilangan positif kedua = &quot;</span><span class="p">,</span> <span class="n">num2</span><span class="p">,</span> <span class="s2">&quot; ,binary = &quot;</span><span class="p">,</span> <span class="nb">format</span><span class="p">(</span><span class="n">num2</span><span class="p">,</span> <span class="s2">&quot;08b&quot;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hasil operasi OR = &quot;</span><span class="p">,</span><span class="n">num3</span><span class="p">,</span><span class="s2">&quot;,binary = &quot;</span><span class="p">,</span><span class="nb">format</span><span class="p">(</span><span class="n">num3</span><span class="p">,</span><span class="s2">&quot;08b&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bilangan positif pertama =  1 ,binary =  00000001
+bilangan positif kedua =  2  ,binary =  00000010
+hasil operasi OR =  3 ,binary =  00000011
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;masukkan teks : &quot;</span><span class="p">)</span>
+<span class="n">B</span><span class="o">=</span><span class="n">A</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span><span class="s2">&quot;&quot;</span><span class="p">)</span> 
+<span class="n">C</span><span class="o">=</span><span class="n">B</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:],</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span><span class="o">+</span><span class="n">B</span><span class="o">+</span><span class="n">A</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>YABAL SURYAIQ
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#NMR 5 MUF</span>
+<span class="n">n</span><span class="o">=</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;masukkan teks : &quot;</span><span class="p">)</span>
+<span class="n">b</span><span class="o">=</span><span class="n">n</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span><span class="s2">&quot;&quot;</span><span class="p">)</span> 
+<span class="n">m</span><span class="o">=</span><span class="n">b</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:],</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span><span class="o">+</span><span class="n">m</span><span class="o">+</span><span class="n">n</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>YABAL SURIQ
+</pre></div>
+</div>
+</div>
+</div>
+<p>fixxxxxxxxxxxxxxxxxxxxx</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NOMOR 1</span>
+
+<span class="n">varN</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;masukkan nilai angka dari (n) = &quot;</span><span class="p">))</span>
+<span class="n">num</span><span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">var1</span><span class="o">=</span><span class="n">num</span><span class="o">+</span><span class="n">num</span>
+<span class="n">var2</span><span class="o">=</span><span class="n">num</span><span class="o">+</span><span class="n">num</span><span class="o">+</span><span class="n">num</span> 
+<span class="n">temp</span><span class="o">=</span><span class="n">n</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">var1</span><span class="p">)</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">var2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">n</span><span class="si">}{</span><span class="n">n</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="n">n</span><span class="si">}{</span><span class="n">n</span><span class="si">}{</span><span class="n">n</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil nilai angka dari (n) = &quot;</span> <span class="p">,</span><span class="n">temp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 + 11 + 111
+Hasil nilai angka dari (n) =  123
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bilanganmax</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;masukkan jumlah bilangan = &#39;</span><span class="p">))</span>
+<span class="n">lve</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">hie</span><span class="o">=</span><span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">bilanganmax</span><span class="o">*</span><span class="mi">2</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">i</span><span class="o">%</span><span class="k">2</span>==1:
+       <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;bilangan ganjil ke-&#39;</span><span class="p">,</span><span class="n">lve</span><span class="p">,</span><span class="s1">&#39; : &#39;</span><span class="p">,</span><span class="n">i</span><span class="p">)</span>
+       <span class="n">lve</span><span class="o">+=</span><span class="mi">1</span>
+       <span class="n">hie</span><span class="o">+=</span><span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;total = &#39;</span><span class="p">,</span><span class="n">hie</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bilangan ganjil ke- 1  :  1
+bilangan ganjil ke- 2  :  3
+bilangan ganjil ke- 3  :  5
+bilangan ganjil ke- 4  :  7
+bilangan ganjil ke- 5  :  9
+bilangan ganjil ke- 6  :  11
+bilangan ganjil ke- 7  :  13
+bilangan ganjil ke- 8  :  15
+bilangan ganjil ke- 9  :  17
+bilangan ganjil ke- 10  :  19
+total =  100
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#2</span>
+<span class="n">listangka</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">angkasama</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">listangka</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;deretan angka yang dimasukan = &#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">listangka</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">9</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">listangka</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">listangka</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>
+            <span class="n">angkasama</span> <span class="o">+=</span> <span class="mi">1</span>
+        
+<span class="k">if</span> <span class="n">angkasama</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hasilnya terdeteksi terdapat&#39;</span><span class="p">,</span><span class="n">angkasama</span><span class="p">,</span><span class="s1">&#39;angka yang sama&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ada angka yang berbeda &quot;</span><span class="p">,</span><span class="n">angkasama</span><span class="p">)</span>
+    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;6&#39;, &#39;7&#39;, &#39;8&#39;]
+hasilnya terdeteksi terdapat 2 angka yang sama
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#4</span>
+<span class="n">kata</span> <span class="o">=</span> <span class="s1">&#39;mereka binatang&#39;</span>
+<span class="n">kata</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">kata</span><span class="p">)</span>
+<span class="n">kataTukar</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2 kata sebelumnya = &#39;</span><span class="p">,</span><span class="n">kata</span><span class="p">)</span>
+<span class="n">kata</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">kata</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">kata</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">kata</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">kata</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">kata</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">kata</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">kata</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">kata</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">kata</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">kata</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">kata</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kata</span><span class="p">)):</span>
+    <span class="n">kataTukar</span> <span class="o">+=</span> <span class="n">kata</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;2 kata setelah ditukar =&#39;</span><span class="p">,</span><span class="nb">list</span><span class="p">(</span><span class="n">kataTukar</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2 kata sebelumnya =  [&#39;m&#39;, &#39;e&#39;, &#39;r&#39;, &#39;e&#39;, &#39;k&#39;, &#39;a&#39;, &#39; &#39;, &#39;b&#39;, &#39;i&#39;, &#39;n&#39;, &#39;a&#39;, &#39;t&#39;, &#39;a&#39;, &#39;n&#39;, &#39;g&#39;]
+2 kata setelah ditukar = [&#39;n&#39;, &#39;g&#39;, &#39;r&#39;, &#39;e&#39;, &#39;k&#39;, &#39;a&#39;, &#39; &#39;, &#39;b&#39;, &#39;i&#39;, &#39;n&#39;, &#39;a&#39;, &#39;t&#39;, &#39;a&#39;, &#39;m&#39;, &#39;e&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">INSTRUCTIONS</span>
+
+<span class="sd">1. Create a file with the following code</span>
+<span class="sd">2. Put the file you want to convert into the same folder as it, and rename it to &quot;file.py&quot;</span>
+<span class="sd">3. Add a &quot;#F&quot; comment to any lines in the code which have a function call that doesn&#39;t assign anything (so no =),</span>
+<span class="sd">as the program cannot handle these convincingly</span>
+<span class="sd">4. Run the converter file</span>
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="n">python_file</span> <span class="o">=</span> <span class="s1">&#39;file.py&#39;</span>
+<span class="n">work_file</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="n">basic_conversion_rules</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;for&quot;</span><span class="p">:</span> <span class="s2">&quot;FOR&quot;</span><span class="p">,</span> <span class="s2">&quot;=&quot;</span><span class="p">:</span> <span class="s2">&quot;TO&quot;</span><span class="p">,</span> <span class="s2">&quot;if&quot;</span><span class="p">:</span> <span class="s2">&quot;IF&quot;</span><span class="p">,</span> <span class="s2">&quot;==&quot;</span><span class="p">:</span> <span class="s2">&quot;EQUALS&quot;</span><span class="p">,</span> <span class="s2">&quot;while&quot;</span><span class="p">:</span> <span class="s2">&quot;WHILE&quot;</span><span class="p">,</span> <span class="s2">&quot;until&quot;</span><span class="p">:</span> <span class="s2">&quot;UNTIL&quot;</span><span class="p">,</span> <span class="s2">&quot;import&quot;</span><span class="p">:</span> <span class="s2">&quot;IMPORT&quot;</span><span class="p">,</span> <span class="s2">&quot;class&quot;</span><span class="p">:</span> <span class="s2">&quot;DEFINE CLASS&quot;</span><span class="p">,</span> <span class="s2">&quot;def&quot;</span><span class="p">:</span> <span class="s2">&quot;DEFINE FUNCTION&quot;</span><span class="p">,</span> <span class="s2">&quot;else:&quot;</span><span class="p">:</span> <span class="s2">&quot;ELSE:&quot;</span><span class="p">,</span> <span class="s2">&quot;elif&quot;</span><span class="p">:</span> <span class="s2">&quot;ELSEIF&quot;</span><span class="p">,</span> <span class="s2">&quot;except:&quot;</span><span class="p">:</span> <span class="s2">&quot;EXCEPT:&quot;</span><span class="p">,</span> <span class="s2">&quot;try:&quot;</span><span class="p">:</span> <span class="s2">&quot;TRY:&quot;</span><span class="p">,</span> <span class="s2">&quot;pass&quot;</span><span class="p">:</span> <span class="s2">&quot;PASS&quot;</span><span class="p">,</span> <span class="s2">&quot;in&quot;</span><span class="p">:</span> <span class="s2">&quot;IN&quot;</span><span class="p">}</span>
+<span class="n">prefix_conversion_rules</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;=&quot;</span><span class="p">:</span> <span class="s2">&quot;SET &quot;</span><span class="p">,</span> <span class="s2">&quot;#F&quot;</span><span class="p">:</span> <span class="s2">&quot;CALL &quot;</span><span class="p">}</span>
+<span class="n">advanced_conversion_rules</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;print&quot;</span><span class="p">:</span> <span class="s2">&quot;OUTPUT&quot;</span><span class="p">,</span> <span class="s2">&quot;return&quot;</span><span class="p">:</span> <span class="s2">&quot;RETURN&quot;</span><span class="p">,</span> <span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="s2">&quot;INPUT&quot;</span><span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">f2list</span><span class="p">(</span><span class="n">to_list</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">to_list</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">l2pseudo</span><span class="p">(</span><span class="n">to_pseudo</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">to_pseudo</span><span class="p">:</span>
+        <span class="n">line_index</span> <span class="o">=</span> <span class="n">to_pseudo</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\s+)&#39;</span><span class="p">,</span> <span class="n">line</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">prefix_conversion_rules</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">:</span>
+                    <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span> <span class="o">+</span> <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span> <span class="o">+</span> <span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">basic_conversion_rules</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">key</span> <span class="o">==</span> <span class="nb">str</span><span class="p">(</span><span class="n">word</span><span class="p">):</span>
+                    <span class="n">line</span><span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">)]</span> <span class="o">=</span> <span class="n">value</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">advanced_conversion_rules</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                <span class="n">line</span><span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">)]</span> <span class="o">=</span> <span class="n">word</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">prefix_conversion_rules</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">line</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">word</span> <span class="o">==</span> <span class="n">key</span><span class="p">:</span>
+                    <span class="k">del</span> <span class="n">line</span><span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">word</span><span class="p">)]</span>
+        <span class="n">to_pseudo</span><span class="p">[</span><span class="n">line_index</span><span class="p">]</span><span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">to_pseudo</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">p2file</span><span class="p">(</span><span class="n">to_file</span><span class="p">):</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">python_file</span> <span class="o">+</span> <span class="s1">&#39;_pseudo.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">to_file</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">,</span> <span class="n">file</span><span class="o">=</span><span class="n">file</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+    <span class="n">main_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">python_file</span><span class="p">,</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span>
+    <span class="n">work_file</span> <span class="o">=</span> <span class="n">f2list</span><span class="p">(</span><span class="n">main_file</span><span class="p">)</span>
+    <span class="n">work_file</span> <span class="o">=</span> <span class="n">l2pseudo</span><span class="p">(</span><span class="n">work_file</span><span class="p">)</span>
+    <span class="n">p2file</span><span class="p">(</span><span class="n">work_file</span><span class="p">)</span>
+    
+
+<span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">~</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Temp</span><span class="o">/</span><span class="n">ipykernel_8220</span><span class="o">/</span><span class="mf">838800628.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span> 
+<span class="g g-Whitespace">     </span><span class="mi">59</span> 
+<span class="ne">---&gt; </span><span class="mi">60</span> <span class="n">main</span><span class="p">()</span>
+
+<span class="nn">~\AppData\Local\Temp/ipykernel_8220/838800628.py</span> in <span class="ni">main</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span> 
+<span class="g g-Whitespace">     </span><span class="mi">53</span> <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="ne">---&gt; </span><span class="mi">54</span>     <span class="n">main_file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">python_file</span><span class="p">,</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">55</span>     <span class="n">work_file</span> <span class="o">=</span> <span class="n">f2list</span><span class="p">(</span><span class="n">main_file</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="n">work_file</span> <span class="o">=</span> <span class="n">l2pseudo</span><span class="p">(</span><span class="n">work_file</span><span class="p">)</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;file.py&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;masukkan deret angka ke-1 : &quot;</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;masukkan deret angka ke-2 : &quot;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;masukkan deret angka ke-3 : &quot;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">())</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ada angka yang sama&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="n">c</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ada angka yang sama&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">b</span> <span class="o">==</span> <span class="n">c</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ada angka yang sama&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tidak ada angka yang sama&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">date</span>
+
+<span class="n">date1</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">date2</span> <span class="o">=</span> <span class="n">date</span><span class="p">(</span><span class="mi">2022</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">date</span> <span class="o">=</span> <span class="n">date2</span> <span class="o">-</span> <span class="n">date1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">date</span><span class="o">.</span><span class="n">days</span><span class="p">,</span><span class="s1">&#39;hari&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9 hari
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="21-002_Modul_6_praktikum.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">TUGAS 6 : PRAKTIKUM ALGORITMA PEMROGRAMAN</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="210411100002_Modul_1_%E2%80%93_Review_Algoritma_Pemrograman.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">PRAKTIKUM STRUKTUR DATA : MODUL 1 - REVIEW ALGORITMA PEMROGRAMAN</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 210411100002 - Mohammad Iqbal Surya Ramadhan
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

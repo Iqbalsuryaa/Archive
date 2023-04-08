@@ -1,0 +1,48 @@
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/dist-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/usr/local/lib/python3.9/dist-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/usr/local/lib/python3.9/dist-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/usr/local/lib/python3.9/dist-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/usr/local/lib/python3.9/dist-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/usr/local/lib/python3.9/dist-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/usr/local/lib/python3.9/dist-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# nomor 1
+
+import math
+radius = 6371.01
+x1, y1 = eval(input("Masukkan titik 1 (latitude, longitude) dalam derajat: "))
+x2, y2 = eval(input("Masukkan titik 2 (latitude, longitude) dalam derajat: "))
+d= radius * math.acos(math.sin(math.radians(x1))*math.sin(math.radians(x2))+math.cos(math.radians(x1))*math.cos(math.radians(x2))*math.cos(math.radians(y1-y2)))
+print("Jarak antara dua titik ini adalah", d,"km" )
+------------------
+
+[0;31m[0m
+[0;31mStdinNotImplementedError[0mTraceback (most recent call last)
+[0;32m<ipython-input-1-65c500041adc>[0m in [0;36m<cell line: 5>[0;34m()[0m
+[1;32m      3[0m [0;32mimport[0m [0mmath[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m [0mradius[0m [0;34m=[0m [0;36m6371.01[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 5[0;31m [0mx1[0m[0;34m,[0m [0my1[0m [0;34m=[0m [0meval[0m[0;34m([0m[0minput[0m[0;34m([0m[0;34m"Masukkan titik 1 (latitude, longitude) dalam derajat: "[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      6[0m [0mx2[0m[0;34m,[0m [0my2[0m [0;34m=[0m [0meval[0m[0;34m([0m[0minput[0m[0;34m([0m[0;34m"Masukkan titik 2 (latitude, longitude) dalam derajat: "[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      7[0m [0md[0m[0;34m=[0m [0mradius[0m [0;34m*[0m [0mmath[0m[0;34m.[0m[0macos[0m[0;34m([0m[0mmath[0m[0;34m.[0m[0msin[0m[0;34m([0m[0mmath[0m[0;34m.[0m[0mradians[0m[0;34m([0m[0mx1[0m[0;34m)[0m[0;34m)[0m[0;34m*[0m[0mmath[0m[0;34m.[0m[0msin[0m[0;34m([0m[0mmath[0m[0;34m.[0m[0mradians[0m[0;34m([0m[0mx2[0m[0;34m)[0m[0;34m)[0m[0;34m+[0m[0mmath[0m[0;34m.[0m[0mcos[0m[0;34m([0m[0mmath[0m[0;34m.[0m[0mradians[0m[0;34m([0m[0mx1[0m[0;34m)[0m[0;34m)[0m[0;34m*[0m[0mmath[0m[0;34m.[0m[0mcos[0m[0;34m([0m[0mmath[0m[0;34m.[0m[0mradians[0m[0;34m([0m[0mx2[0m[0;34m)[0m[0;34m)[0m[0;34m*[0m[0mmath[0m[0;34m.[0m[0mcos[0m[0;34m([0m[0mmath[0m[0;34m.[0m[0mradians[0m[0;34m([0m[0my1[0m[0;34m-[0m[0my2[0m[0;34m)[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/usr/local/lib/python3.9/dist-packages/ipykernel/kernelbase.py[0m in [0;36mraw_input[0;34m(self, prompt)[0m
+[1;32m    846[0m         """
+[1;32m    847[0m         [0;32mif[0m [0;32mnot[0m [0mself[0m[0;34m.[0m[0m_allow_stdin[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 848[0;31m             raise StdinNotImplementedError(
+[0m[1;32m    849[0m                 [0;34m"raw_input was called, but this frontend does not support input requests."[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    850[0m             )
+
+[0;31mStdinNotImplementedError[0m: raw_input was called, but this frontend does not support input requests.
+StdinNotImplementedError: raw_input was called, but this frontend does not support input requests.
+
